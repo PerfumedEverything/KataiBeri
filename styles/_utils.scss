@@ -1,0 +1,60 @@
+@use 'helpers' as *;
+
+.container {
+    max-width: calc(var(--container-width) + var(--container-padding-x) * 2);
+    margin-inline: auto;
+
+    @include tablet {
+        margin-inline: rem(20);
+    }
+
+    @include mobile {
+        margin-inline: rem(10);
+    }
+}
+
+.frame {
+    background-color: var(--color-white);
+    border-radius: rem(55);
+
+    &-filters {
+        border-radius: rem(30);
+        background-color: var(--color-white);
+    }
+}
+
+.visually-hidden {
+    @include visually-hidden
+}
+
+.is-hidden {
+    display: none !important;
+    visibility: hidden;
+    opacity: 0;
+}
+
+.is-visible {
+    opacity: 1;
+}
+
+.hidden-mobile {
+    @include mobile {
+        display: none !important;
+    }
+}
+.hidden-tablet {
+    @include tablet {
+        display: none !important;
+    }
+}
+
+.visible-tablet {
+    @include tablet-above {
+        display: none !important;
+    }
+}
+.visible-mobile {
+    @include mobile-above {
+        display: none !important;
+    }
+}

@@ -1,0 +1,55 @@
+@use '../helpers' as *;
+
+.catalog-card {
+    display: flex;
+    flex-direction: column;
+    padding: rem(20);
+
+    &__filters {
+        display: flex;
+        column-gap: rem(8);
+    }
+    
+    &__location-tag {
+        padding: rem(11) rem(16);
+        border-radius: rem(100);
+        background-color: var(--color-location-tag);
+    }
+
+    &__title {
+        margin-top: rem(65);
+        text-align: left;
+    }
+
+    &__select {
+        @include fluid-text(16, 12);
+
+        cursor: pointer;
+        appearance: none;
+        width: 100%;
+        border: none;
+        border-radius: rem(8);
+        padding: rem(14);
+        margin-top: rem(40);
+        background-color: var(--color-gray-2);
+        background-image: url(../../icons/arrow-down.svg);
+        background-repeat: no-repeat;
+        background-position: right rem(12) center;
+        background-size: rem(10);
+
+        @include mobile {
+            margin-top: rem(20);
+        }
+    }
+
+    &__link {
+        margin-top: rem(24);
+        width: 100%;
+        justify-content: center;
+        padding: rem(20);
+
+        @include mobile {
+            margin-top: rem(12);
+        }
+    }
+}

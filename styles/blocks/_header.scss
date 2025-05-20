@@ -1,0 +1,152 @@
+@use '../helpers' as *;
+
+.header {
+    position: sticky;
+    z-index: 100 ;
+    top: 0;
+
+    &-inner {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        column-gap: rem(72);
+        padding: rem(20);
+        border-radius: rem(40);
+        background-color: var(--color-accent);
+
+        @include tablet {
+            column-gap: rem(30);
+        }
+
+        @include mobile-s {
+            height: rem(80);
+        }
+    }
+
+    &__map-link {
+        margin-right: auto;
+        padding: rem(14) rem(28);
+        background-color: var(--color-map-link);
+        border-radius: rem(51);
+        column-gap: rem(11);
+        
+        @include tablet {
+            padding: rem(15) rem(25);
+        }
+
+        @include mobile-s {
+            display: none;
+        }
+
+        @include hover {
+            scale: .95;
+        }
+    }
+    
+    &__overlay {
+        @include tablet-above {
+            display: contents;
+        }
+
+        @include tablet {
+            position: fixed;
+            margin-top: rem(100);
+            z-index: 90;
+            inset: 0;
+            display: flex;
+            flex-direction: column;
+            row-gap: rem(10);
+            padding: rem(20);
+            background-color: var(--color-white);
+            transition-duration: var(--transition-duration);
+
+            @include mobile {
+                padding: rem(10);
+            }
+
+            &:not(.is-active) {
+                @include hide;
+                
+                translate: 100%;
+            }
+        }
+
+        @include mobile {
+            margin-top: rem(81);
+        }
+
+        @include mobile-s {
+            margin-top: rem(76);
+        }
+
+        &-tel {
+            @include fluid-text(40, 24);
+
+            color: var(--color-accent);
+            margin-top: auto;
+
+            @include tablet-above {
+                display: none;
+            }
+
+        }
+
+        &-socials {
+            @include tablet-above {
+                display: none;
+            }
+
+            &-list {
+                display: flex;
+                column-gap: rem(15);
+            }
+
+            &-link {
+                @include tablet {
+                    @include square(rem(50))
+                }
+            }
+        }
+    }
+
+
+    &__menu {
+        &-list {
+            display: flex;
+            align-items: center;
+            column-gap: rem(20);
+
+            @include tablet {
+                overflow-y: auto;
+                flex-direction: column;
+                align-items: start;
+                margin-top: rem(50);
+                gap: rem(20);
+            }
+        }
+
+        &-item {
+            transition: var(--transition-duration);
+
+            @include hover {
+                scale: .95;
+            }
+        }
+
+        &-link {
+            @include tablet {
+                @include fluid-text(50, 28);
+
+                color: var(--color-accent);
+            }
+        }
+    }
+
+    &__want-to-ride-button {
+        color: var(--color-accent);
+        background-color: var(--color-white);
+        padding: rem(14) rem(45);
+        border-radius: rem(100);
+        white-space: nowrap;
+    }
+}

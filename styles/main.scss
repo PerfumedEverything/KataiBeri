@@ -1,0 +1,27 @@
+@use 'normalize';
+@use 'fonts';
+@use 'variables';
+@use 'utils';
+@use 'globals';
+
+@use 'blocks/logo';
+@use 'blocks/button';
+@use 'blocks/burger-button';
+@use 'blocks/header';
+@use 'blocks/footer';
+@use 'blocks/hero';
+@use 'blocks/services';
+@use 'blocks/grid';
+@use 'blocks/service-card';
+@use 'blocks/options';
+@use 'blocks/option-card';
+@use 'blocks/about';
+@use 'blocks/form';
+@use 'blocks/reviews';
+@use 'blocks/review-card';
+@use 'blocks/map';
+@use 'blocks/questions';
+@use 'blocks/filters';
+@use 'blocks/catalog-card';
+@use 'blocks/alt-about';
+@use 'blocks/popup';

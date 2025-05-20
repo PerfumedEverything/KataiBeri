@@ -1,0 +1,267 @@
+@use '../helpers' as *;
+
+.button--green {
+    @include hover {
+        background-color: var(--color-green);
+        color:var(--color-white);
+        scale: .95;
+    }
+}
+
+
+.button {
+    background-color: var(--color-accent);
+    border-radius: rem(50);
+    color: var(--color-white);
+
+    @include hover {
+        scale: .98;
+    }
+}
+
+.button-light {
+    @include reset-button;
+    
+    background-color: var(--color-accent-light);
+    border-radius: rem(50);
+    color: var(--color-accent);
+
+    @include hover {
+        background-color: var(--color-accent);
+        color: var(--color-accent-light);
+        scale: .98;
+    }
+}
+
+.button-form {
+    @include reset-button;
+    
+    width: 100%;
+    padding: rem(26) 0;
+    justify-content: center;
+    background-color: var(--color-form-button);
+    border-radius: rem(50);
+    color: var(--color-accent);
+
+    @include hover {
+        background-color: var(--color-accent);
+        color: var(--color-form-button);
+        scale: .98;
+    }
+}
+
+.button-filters {
+    @include reset-button;
+    @include fluid-text(18, 14);
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    column-gap: rem(10);
+
+    border-radius: rem(8);
+    padding: rem(12);
+    background-color: var(--color-gray-2);
+    max-width: fit-content;
+    line-height: 114%;
+
+    @include hover {
+        scale: .95;
+    }
+
+    &.active {
+        background-color: var(--color-location-tag);
+        color: var(--color-dark);
+
+        .button-filters__cross {
+            display: block;
+        }
+    }
+
+    .button-filters__cross {
+        @include square (rem(14));
+
+        display: none;
+        position: relative;
+        transition: var(--transition-duration);
+
+        &::before,
+        &::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 100%;
+            height: 2px;
+            background-color: var(--color-dark);
+            transform-origin: center;
+        }
+
+        &::before {
+            transform: translate(-50%, -50%) rotate(45deg);
+        }
+        
+        &::after {
+            transform: translate(-50%, -50%) rotate(-45deg);
+        }
+    }
+}
+
+
+.filters__buttons {
+    display: flex;
+    flex-direction: column;
+    row-gap: rem(8);
+    
+    @include tablet {
+        flex: 1;
+    }
+}
+
+.filters__apply-button {
+    @include reset-button;
+
+    border-radius: rem(1000);
+    padding: rem(26) 0;
+    background-color: var(--color-accent);
+    color: var(--color-white);
+
+    @include tablet {
+        width: 100%;
+    }
+}
+
+.filters__reset-button {
+    @include reset-button;
+
+    border-radius: rem(1000);
+    padding: rem(26) 0;
+    background-color: var(--color-white);
+
+    @include hover {
+        scale: .95;
+    }
+}
+
+.button--whatsapp {
+    @include tablet {
+        @include square(rem(50));
+
+        position: relative;
+
+        &::before {
+            position: absolute;
+            content: '';
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url(../../icons/whatsapp-icon.svg) no-repeat center;
+            background-size: contain;
+            transition: opacity 0.3s ease;
+        }
+
+        &:hover::before {
+            opacity: 0;
+        }
+
+        &::after {
+            position: absolute;
+            content: '';
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url(../../icons/whatsapp-icon-hover.svg) no-repeat center;
+            background-size: contain;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        &:hover::after {
+            opacity: 1;
+        }
+    }
+}
+
+.button--vk {
+    @include tablet {
+        @include square(rem(50));
+
+        position: relative;
+
+        &::before {
+            position: absolute;
+            content: '';
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url(../../icons/vk-icon.svg) no-repeat center;
+            background-size: contain;
+            transition: opacity 0.3s ease;
+        }
+
+        &:hover::before {
+            opacity: 0;
+        }
+
+        &::after {
+            position: absolute;
+            content: '';
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url(../../icons/vk-icon-hover.svg) no-repeat center;
+            background-size: contain;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        &:hover::after {
+            opacity: 1;
+        }
+    }
+}
+
+.button--telegram {
+    @include tablet {
+        @include square(rem(50));
+
+        position: relative;
+
+        &::before {
+            position: absolute;
+            content: '';
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url(../../icons/telegram-icon.svg) no-repeat center;
+            background-size: contain;
+            transition: opacity 0.3s ease;
+        }
+
+        &:hover::before {
+            opacity: 0;
+        }
+
+        &::after {
+            position: absolute;
+            content: '';
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url(../../icons/telegram-icon-hover.svg) no-repeat center;
+            background-size: contain;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        &:hover::after {
+            opacity: 1;
+        }
+    }
+}

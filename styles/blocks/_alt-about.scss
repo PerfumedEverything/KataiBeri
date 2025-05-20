@@ -1,0 +1,75 @@
+@use '../helpers' as *;
+
+.alt-about {
+    &__main-title {
+        text-align: center;
+        margin: rem(80) 0;
+    }
+
+    &__item {
+        display: flex;
+        flex-direction: column;
+        min-height: rem(200);
+        padding: rem(40);
+        border-radius: rem(55);
+        row-gap: rem(40);
+
+        @include laptop-above {
+            min-height: rem(450);
+        }
+
+        @include mobile {
+            padding: rem(30);
+        }
+
+        & p {
+            @include fluid-text(20, 16)
+        }
+
+        &[data-bg="main"] {
+            grid-column: span 2;
+            background: url(../../images/alt-about-bg-main.png) 100%/cover no-repeat;
+
+            & p {
+                @include tablet {
+                    display: none;
+                }
+            }
+        }
+
+        &[data-bg="accent-light"] {
+            background: url(../../images/alt-about-bg-accent-light.png) 100%/cover no-repeat;
+
+            & p {
+                color: var(--color-accent);
+            }
+        }
+
+        &-button {
+            align-self: end;
+            max-width: fit-content;
+            margin-top: auto;
+            padding: rem(20) rem(30);
+            gap: rem(7);
+            line-height: .95;
+        }
+    }
+
+    &__paragraph {
+        display: flex;
+        gap: rem(14);
+
+        &-icon {
+            @include tablet {
+                display: none;
+            }
+        }
+    }
+
+    &__buttons {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-top: auto;
+    }
+}

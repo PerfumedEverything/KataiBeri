@@ -1,0 +1,80 @@
+@use '../helpers' as *;
+
+.map {
+    scroll-margin-top: rem(170);
+
+    &__title {
+        text-align: center;
+        margin: rem(80) 0;
+    }
+    &__body {
+        display: flex;
+        justify-content: space-between;
+        gap: rem(20);
+
+        @include tablet {
+            gap: rem(15);
+        }
+
+        @include mobile {
+            flex-direction: column;
+        }
+    }
+
+    &__aside {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: rem(20);
+        flex: 1;
+
+        @include mobile {
+            flex-direction: row;
+            gap: rem(10);
+        }
+
+        @include mobile-s {
+            flex-direction: column;
+        }
+
+        &-container {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 100%;
+            flex: 1;
+            padding: rem(30);
+            cursor: pointer;
+
+            &.active {
+                background-color: var(--color-accent);
+
+                h3 {
+                    color: var(--color-white);
+                }
+
+                p {
+                    color: var(--color-white);
+                }
+            }
+        }
+
+        &-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        &-footer p {
+            color: var(--color-gray-3);
+        }
+    }
+
+    &__container {
+        border-radius: rem(55);
+        min-width: 0;
+        flex: 2;
+        height: rem(628); 
+        overflow: hidden;
+    }
+}

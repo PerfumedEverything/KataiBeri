@@ -1,0 +1,51 @@
+@use '../helpers' as *;
+
+.service-card {
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: rem(30);
+    min-height: rem(480);
+    border-radius: rem(55);
+    transition-duration: var(--transition-duration);
+
+    &[data-bg="bike"]{
+        background: url(../../images/services-bg-bike.png) 100%/cover no-repeat;
+    }
+    &[data-bg="supboard"]{
+        background: url(../../images/services-bg-supboard.png) 100%/cover no-repeat;
+    }
+    &[data-bg="samokat"]{
+        background: url(../../images/services-bg-samokat.png) 100%/cover no-repeat;
+    }
+    &[data-bg="fat-bike"]{
+        background: url(../../images/services-bg-fatbike.png) 100%/cover no-repeat;
+    }
+    &[data-bg="extra"]{
+        background: url(../../images/services-bg-extra.png) 100%/cover no-repeat;
+    }
+
+    @include hover {
+        transform: scale(.98);
+    }
+
+    @include tablet {
+        min-height: rem(350);
+    }
+
+    &-extra {
+        &__link {
+            align-self: end;
+            gap: rem(7);
+            line-height: .95;
+        }
+    }
+    
+    &__link {
+        padding: rem(25) rem(30);
+        max-width: fit-content;
+        
+    }
+}

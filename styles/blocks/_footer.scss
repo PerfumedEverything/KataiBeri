@@ -1,0 +1,174 @@
+@use '../helpers' as *;
+
+.footer {
+    margin-top: rem(80);
+    margin-bottom: rem(90);
+
+    @include tablet {
+        margin-bottom: rem(64);
+    }
+
+    &__inner {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: rem(20);
+
+        @include tablet {
+            gap: rem(15);
+        }
+
+        @include mobile {
+            display: flex;
+            flex-direction: column;
+            gap: rem(12);
+        }
+    }
+
+    &__socials {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: rem(40) rem(40) rem(140) rem(16);
+
+        &-list {
+            display: flex;
+            gap: rem(10);
+        }
+
+        &-link {
+            @include square(rem(50))
+        }
+
+        @include laptop {
+            padding: rem(40) rem(40) rem(120) rem(16);
+
+        }
+
+        @include tablet {
+            display: flex;
+            flex-direction: column;
+            align-items: start;
+            padding: rem(30);
+        }
+
+        @include mobile {
+            gap: rem(60);
+        }
+    }
+
+    &__advice {
+        padding: rem(40) rem(40) rem(150);
+        color: var(--color-accent);
+        font-weight: 400;
+
+        @include laptop {
+            padding: rem(40) rem(40) rem(120) rem(46);
+
+        }
+
+        @include tablet {
+            padding: rem(30) rem(30) rem(100);
+        }
+    }
+
+    &__contacts {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        row-gap: rem(40);
+        padding: rem(40) rem(40) rem(48) rem(40);
+
+        @include tablet {
+            display: flex;
+            flex-direction: column;
+            gap: rem(10);
+            padding: rem(30)
+        }
+
+        &-subtitle {
+            @include fluid-text(14,10);
+
+            color: var(--color-gray-7);
+        }
+
+        &-mobile {
+            display: flex;
+            flex-direction: column;
+            gap: rem(10);
+            padding-right: auto;
+        }
+
+        &-tel {
+            @include fluid-text(20, 16);
+
+            color: var(--color-dark);
+        }
+
+        &-mail {
+            display: flex;
+            flex-direction: column;
+            gap: rem(10);
+            padding-right: auto;
+        }
+
+        &-email {
+            @include fluid-text(20, 16);
+
+            color: var(--color-dark);
+        }
+
+        &-contact-us {
+            display: flex;
+            flex-direction: column;
+            gap: rem(10);
+
+            &-link {
+                @include fluid-text(20, 16);
+
+                color: var(--color-accent);
+            }
+        }
+    }
+
+    &__extra {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        row-gap: rem(40);
+        padding: rem(40) rem(40) rem(88) rem(40);
+
+        @include tablet {
+            display: flex;
+            flex-direction: column;
+            align-items: start;
+            padding: rem(30);
+        }
+
+        &-subtitle {
+            @include fluid-text(14,10);
+
+            color: var(--color-gray-7);
+        }
+        
+        &-address {
+            @include fluid-text(14, 12);
+
+            font-weight: 500;
+        }
+
+        &-user{
+            display: flex;
+            flex-direction: column;
+            row-gap: rem(10);
+
+            a {
+                @include fluid-text(12, 10);
+
+                color: var(--color-gray-7);
+                text-wrap: nowrap;
+
+                @include hover {
+                    text-decoration-line: underline;
+                }
+            }
+        } 
+    }
+}

@@ -1,0 +1,10 @@
+@use '../helpers' as *;
+
+.review-card {
+    display: flex;
+    flex-direction: column;
+    row-gap: rem(40);
+    padding: rem(40);
+    border-radius: rem(55);
+    background-color: var(--color-gray-5);
+}

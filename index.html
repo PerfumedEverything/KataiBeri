@@ -1,0 +1,790 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta 
+        name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Katai Beri | Home</title>
+    <link rel="stylesheet" href="./styles/main.css" />
+    <script src="./scripts/main.js" type="module"></script>
+</head>
+<body>
+    <header class="header" data-js-header="">
+        <div class="header-inner container">
+            <a 
+                class="header__logo logo" 
+                href="/"
+                aria-label="Home"
+                title="Home"
+            >
+                <img
+                    class="logo__image"
+                    src="./images/logo.svg" 
+                    alt=""
+                    width="190"
+                    height="35"
+                >
+            </a>
+
+            <a class="header__map-link" href="#map">       
+                    <img 
+                        class="map__icon" 
+                        src="./icons/map.svg" 
+                        alt="" 
+                        width="24" 
+                        height="24"
+                        loading="lazy"
+                    >
+                    Волгоград
+            </a>
+
+            <div class="header__overlay" data-js-header-overlay>
+                <nav class="header__menu">
+                    <ul class="header__menu-list">
+                        <li class="header__menu-item">
+                            <a class="header__menu-link" href="/prokat.html">
+                                Прокат
+                            </a>
+                        </li>
+                        <li class="header__menu-item">
+                            <a class="header__menu-link" href="#reviews">
+                                Отзывы
+                            </a>
+                        </li>
+                        <li class="header__menu-item">
+                            <a class="header__menu-link" href="#map">
+                                Карта
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+
+                <a class="header__overlay-tel" href="tel:+70000000000">
+                    +7 000 000 00 00
+                </a>
+
+                <div class="header__overlay-socials">
+                    <ul class="header__overlay-socials-list">
+                        <li class="header__overlay-socials-item">
+                            <a 
+                                class="header__overlay-socials-link button--whatsapp" 
+                                href="#" 
+                                target="_blank" 
+                                aria-label="WhatsApp"
+                                title="WhatsApp"
+                            >
+                            </a>
+                        </li>
+                        <li class="header__overlay-socials-item">
+                            <a 
+                                class="header__overlay-socials-link button--vk" 
+                                href="#" 
+                                target="_blank" 
+                                aria-label="Vk"
+                                title="Vk"
+                            >
+                            </a>
+                        </li>
+                        <li class="header__overlay-socials-item">
+                            <a 
+                                class="header__overlay-socials-link button--telegram" 
+                                href="#" 
+                                target="_blank" 
+                                aria-label="Telegram"
+                                title="Telegram"
+                            >
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+    
+                <a class="header__want-to-ride-button button--green hidden-tablet" href="#" data-popup-open="want-to-ride">
+                    Хочу катать
+                </a>
+
+            <button 
+                class="header__burger-button burger-button visible-tablet"
+                type="button"
+                data-js-header-burger-button
+            >
+                <span class="burger-button__line"></span>
+                <span class="burger-button__line"></span>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero__main container">
+                <div class="hero__body">
+                    <h1 class="hero__title" id="hero-title">Прокат самокатов и велосипедов <span class="no-wrap">в&nbsp;Волгограде</span></h1>
+                    <div class="hero__description">
+                        <p class="hero__subtitle">А также сапбордов <br>
+                            и другого оборудования</p>
+                        <p class="hero__price">От 200р в час</p>
+                    </div>
+                    <img
+                        class="hero__image"
+                        src="/images/samokat-hero-image.png" 
+                        alt="Cамокат"
+                        width="490" height="490" loading="lazy"
+                    >
+                </div>
+                <a class="hero__button button button--green" href="#" data-popup-open="want-to-ride">Хочу катать</a>
+            </div>
+        </section>
+
+        <section class="services">
+            <div class="services__main container">
+                <h2 class="services__title">
+                    Наш парк
+                </h2>
+                <div class="services__body">
+                    <ul class="services__list grid-services">
+                        <li class="services__item">
+                            <article class="service-card" data-bg="bike">
+                                <h3 class="service-card__title">Велосипеды</h3>
+                                <a class="service-card__link button button--green" href="prokat.html">от 200 р/час</a>
+                            </article>
+                        </li>
+                        <li class="services__item">
+                            <article class="service-card" data-bg="supboard">
+                                <h3 class="service-card__title">Сапборды</h3>
+                                <a class="service-card__link button button--green" href="prokat.html">от 200 р/час</a>
+                            </article>
+                        </li>
+                        <li class="services__item">
+                            <article class="service-card" data-bg="samokat">
+                                <h3 class="service-card__title">Электро- <br> самокаты</h3>
+                                <a class="service-card__link button button--green" href="prokat.html">от 200 р/час</a>
+                            </article>
+                        </li>
+                        <li class="services__item">
+                            <article class="service-card" data-bg="fat-bike">
+                                <h3 class="service-card__title">Фэт-байки</h3>
+                                <a class="service-card__link button button--green" href="prokat.html">от 200 р/час</a>
+                            </article>
+                        </li>
+                        <li class="services__item-extra">
+                            <article class="service-card service-card-extra" data-bg="extra">
+                                <h2 class="service-card__title">Еще больше в разделе “прокат”</h2>
+                                <a class="service-card__link service-card-extra__link button button--green" href="prokat.html">
+                                    Прокат
+                                    <span class="service-card__link-icon">
+                                        <svg width="22" height="18" viewBox="0 0 22 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M14.0382 0.630249L12.5443 2.31616L17.3968 7.80433H0.264648L0.264648 10.1957H17.3968L12.5337 15.6839L14.0382 17.3698L21.4547 9.00001L14.0382 0.630249Z" fill="white" />
+                                        </svg>
+                                    </span>
+                                </a>
+                            </article>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="options">
+            <div class="options__main container">
+                <h2 class="options__title">Популярный выбор</h2>
+                <div class="options__body">
+                    <div class="options__slider" data-js-slider>
+                        <ul class="options__slider-list" data-js-slider-list>
+                            <li class="options__slider-item" data-js-slider-item>
+                                <article class="option-card frame">
+                                    <h3 class="option-card__title">
+                                        Велосипед 1
+                                    </h3>
+                                    <div class="option-card__subtitle">
+                                        <p>Подходит для семейных поездок <span class="no-wrap">в&nbsp;парке</span></p>
+                                    </div>
+                                    <img 
+                                        class="option-card__image" 
+                                        src="./images/options-image.png" 
+                                        alt=""
+                                        height="241" width="361" loading="lazy"
+                                    >
+                                    <select class="option-card__select" name="" id="">
+                                        <option value="1">1 час –– 300р</option>
+                                        <option value="2">1 час –– 300р</option>
+                                        <option value="3">1 час –– 300р</option>
+                                    </select>
+                                    <a class="option-card__link button button--green" href="#" data-popup-open="rent">
+                                        Арендовать
+                                    </a>
+                                </article>
+                            </li>
+                            <li class="options__slider-item" data-js-slider-item>
+                                <article class="option-card frame">
+                                    <h3 class="option-card__title">
+                                        Велосипед 1
+                                    </h3>
+                                    <div class="option-card__subtitle">
+                                        <p>Подходит для семейных поездок <span class="no-wrap">в&nbsp;парке</span></p>                                    
+                                    </div>
+                                    <img 
+                                        class="option-card__image" 
+                                        src="./images/options-image.png" 
+                                        alt=""
+                                        height="241" width="361" loading="lazy"
+                                    >
+                                    <select class="option-card__select" name="" id="">
+                                        <option value="1">1 час –– 300р</option>
+                                        <option value="2">1 час –– 300р</option>
+                                        <option value="3">1 час –– 300р</option>
+                                    </select>
+                                    <a class="option-card__link button button--green" href="#" data-popup-open="rent">
+                                        Арендовать
+                                    </a>
+                                </article>
+                            </li>
+                            <li class="options__slider-item" data-js-slider-item>
+                                <article class="option-card frame">
+                                    <h3 class="option-card__title">
+                                        Велосипед 1
+                                    </h3>
+                                    <div class="option-card__subtitle">
+                                        <p>Подходит для семейных поездок <span class="no-wrap">в&nbsp;парке</span></p>                                    
+                                    </div>
+                                    <img 
+                                        class="option-card__image" 
+                                        src="./images/options-image.png" 
+                                        alt=""
+                                        height="241" width="361" loading="lazy"
+                                    >
+                                    <select class="option-card__select" name="" id="">
+                                        <option value="1">1 час –– 300р</option>
+                                        <option value="2">1 час –– 300р</option>
+                                        <option value="3">1 час –– 300р</option>
+                                    </select>
+                                    <a class="option-card__link button button--green" href="#" data-popup-open="rent">
+                                        Арендовать
+                                    </a>
+                                </article>
+                            </li>
+                        </ul>
+                        <div class="options__slider-pagination" data-js-slider-pagination></div>
+                    </div>
+
+                    <button class="options__show-all button-light" href="prokat.html">Смотреть все</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="about">
+            <div class="about__body container">
+                <ul class="about__list grid-about">
+                    <li class="about__item" data-bg="main">
+                        <h2 class="about__title">Почему вам понравится наш сервис</h2>
+                    </li>
+                    <li class="about__item frame">
+                        <h3 class="about__title">Самый большой выбор <span class="no-wrap">в&nbsp;городе</span></h3>
+                        <p class="about__paragraph">Предлагаем самый широкий ассортимент велосипедов и другой техники <span class="no-wrap">в&nbsp;Волгограде</span>. Подберем оптимальный вариант <span class="no-wrap">для&nbsp;комфортных</span> прогулок и активного отдыха.</p>
+                    </li>
+                    <li class="about__item frame">
+                        <h3 class="about__title">Удобные <br> 
+                                    локации</h3>
+                        <p class="about__paragraph">Прокат на Центральной Набережной и <span class="no-wrap">в&nbsp;ЦПКиО</span> — рядом <span class="no-wrap">с&nbsp;главными</span> достопримечательностями и прогулочными маршрутами.</p>
+                    </li>
+                    <li class="about__item frame">
+                        <h3 class="about__title">Программа <br> лояльности</h3>
+                        <p class="about__paragraph">Ценим наших клиентов! Каждый шестой прокат — бесплатно, чтобы ваши прогулки стали еще приятнее.</p>
+                    </li>
+                    <li class="about__item" data-bg="accent-light">
+                        <h3 class="about__title">Доступные <br>
+                            цены</h3>
+                        <p class="about__paragraph">Качественная техника <span class="no-wrap">по&nbsp;честной</span> стоимости. Идеальный баланс цены и удобства <span class="no-wrap">для&nbsp;вашего</span> активного отдыха.</p>
+                        <a class="about__item-button button button--green" href="/">
+                            Прайс
+                            <span class="about__item-link-icon">
+                                <svg width="22" height="18" viewBox="0 0 22 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M14.0382 0.630249L12.5443 2.31616L17.3968 7.80433H0.264648L0.264648 10.1957H17.3968L12.5337 15.6839L14.0382 17.3698L21.4547 9.00001L14.0382 0.630249Z" fill="white" />
+                                </svg>
+                            </span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="form" data-form-container>
+            <form 
+                class="email-form" 
+                action="/" 
+                data-form
+            >
+                <div class="form__body container" data-form-body>
+                    <div class="form__header" data-form-header>
+                        <h2 class="form__header-title">Будь <span class="no-wrap">в&nbsp;курсе</span> новинок <span class="no-wrap">от&nbsp;КатайБери</span></h2>
+                        <p class="form__header-subtitle">Оставьте свою почту, и мы первыми расскажем вам <span class="no-wrap">о&nbsp;новых</span> моделях и специальных предложениях.</p>
+                    </div>
+                    <div class="form__main" data-form-main>
+                        <div class="form__success is-hidden" data-form-success>
+                            <h2>Спасибо за подписку!</h2>
+                        </div>
+                        <div class="form__inputs" data-form-inputs>
+                            <label class="form__label" for="firstName"></label>                        
+                            <input 
+                                class="form__input" 
+                                id="firstName" 
+                                placeholder="Имя*" 
+                                required
+                            />
+                            <label class="form__label" for="email"></label>
+                            <input 
+                                class="form__input" 
+                                id="email" 
+                                placeholder="E-mail*" 
+                                type="email"
+                                required
+                            />
+                        </div>
+                        <button 
+                            class="form__main-button button-form" 
+                            type="submit"
+                            data-form-submit
+                        >
+                            Отправить
+                        </button>
+                        <button 
+                            class="form-button__home is-hidden"
+                            data-form-home
+                        >
+                        Спасибо за подписку!
+                    </button>
+                        <p class="form__agreement" data-form-agreement>Нажимая кнопку «Отправить», вы принимаете согласие на обработку персональных данных</p>
+                    </div>
+                </div>
+            </form>
+        </section>
+
+        <section class="reviews" id="reviews">
+            <div class="reviews__body container frame">
+                <h2 class="reviews__title">Отзывы</h2>
+                <div class="reviews__slider" data-js-slider>
+                    <ul class="reviews__slider-list" data-js-slider-list>
+                        <li class="reviews__slider-item" data-js-slider-item>
+                            <article class="review-card">
+                                <h3 class="review-card__name">Иван Иванов</h3>
+                                <p class="review-card__text">Недавно арендовал самокат, и это было отличное решение! Самокат был <span class="no-wrap">в&nbsp;идеальном</span> состоянии, аккумулятора хватило <span class="no-wrap">на&nbsp;долгую</span> поездку, а управление оказалось очень удобным. </p>
+                            </article>
+                        </li>
+                        <li class="reviews__slider-item" data-js-slider-item>
+                            <article class="review-card">
+                                <h3 class="review-card__name">Иван Иванов</h3>
+                                <p class="review-card__text">Недавно арендовал самокат, и это было отличное решение! Самокат был <span class="no-wrap">в&nbsp;идеальном</span> состоянии, аккумулятора хватило <span class="no-wrap">на&nbsp;долгую</span> поездку, а управление оказалось очень удобным. </p>
+                            </article>
+                        </li>
+                        <li class="reviews__slider-item" data-js-slider-item>
+                            <article class="review-card">
+                                <h3 class="review-card__name">Иван Иванов</h3>
+                                <p class="review-card__text">Недавно арендовал самокат, и это было отличное решение! Самокат был <span class="no-wrap">в&nbsp;идеальном</span> состоянии, аккумулятора хватило <span class="no-wrap">на&nbsp;долгую</span> поездку, а управление оказалось очень удобным. </p>
+                            </article>
+                        </li>
+                        <li class="reviews__slider-item" data-js-slider-item>
+                            <article class="review-card">
+                                <h3 class="review-card__name">Иван Иванов</h3>
+                                <p class="review-card__text">Недавно арендовал самокат, и это было отличное решение! Самокат был <span class="no-wrap">в&nbsp;идеальном</span> состоянии, аккумулятора хватило <span class="no-wrap">на&nbsp;долгую</span> поездку, а управление оказалось очень удобным. </p>
+                            </article>
+                        </li>
+                        <li class="reviews__slider-item" data-js-slider-item>
+                            <article class="review-card">
+                                <h3 class="review-card__name">Иван Иванов</h3>
+                                <p class="review-card__text">Недавно арендовал самокат, и это было отличное решение! Самокат был <span class="no-wrap">в&nbsp;идеальном</span> состоянии, аккумулятора хватило <span class="no-wrap">на&nbsp;долгую</span> поездку, а управление оказалось очень удобным. </p>
+                            </article>
+                        </li>
+                        <li class="reviews__slider-item" data-js-slider-item>
+                            <article class="review-card">
+                                <h3 class="review-card__name">Иван Иванов</h3>
+                                <p class="review-card__text">Недавно арендовал самокат, и это было отличное решение! Самокат был <span class="no-wrap">в&nbsp;идеальном</span> состоянии, аккумулятора хватило <span class="no-wrap">на&nbsp;долгую</span> поездку, а управление оказалось очень удобным. </p>
+                            </article>
+                        </li>
+                        <li class="reviews__slider-item" data-js-slider-item>
+                            <article class="review-card">
+                                <h3 class="review-card__name">Иван Иванов</h3>
+                                <p class="review-card__text">Недавно арендовал самокат, и это было отличное решение! Самокат был <span class="no-wrap">в&nbsp;идеальном</span> состоянии, аккумулятора хватило <span class="no-wrap">на&nbsp;долгую</span> поездку, а управление оказалось очень удобным. </p>
+                            </article>
+                        </li>
+                        <li class="reviews__slider-item" data-js-slider-item>
+                            <article class="review-card">
+                                <h3 class="review-card__name">Иван Иванов</h3>
+                                <p class="review-card__text">Недавно арендовал самокат, и это было отличное решение! Самокат был <span class="no-wrap">в&nbsp;идеальном</span> состоянии, аккумулятора хватило <span class="no-wrap">на&nbsp;долгую</span> поездку, а управление оказалось очень удобным. </p>
+                            </article>
+                        </li>
+                        <li class="reviews__slider-item" data-js-slider-item>
+                            <article class="review-card">
+                                <h3 class="review-card__name">Иван Иванов</h3>
+                                <p class="review-card__text">Недавно арендовал самокат, и это было отличное решение! Самокат был <span class="no-wrap">в&nbsp;идеальном</span> состоянии, аккумулятора хватило <span class="no-wrap">на&nbsp;долгую</span> поездку, а управление оказалось очень удобным. </p>
+                            </article>
+                        </li>
+                    </ul>
+                    <div class="reviews__slider-pagination" data-js-slider-pagination></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="map" id="map">
+            <h2 class="map__title">Пункты самовывоза</h2>
+            <div class="map__body container">
+                <div class="map__aside">
+                    <div 
+                        class="map__aside-container frame" 
+                        data-lat="48.7326" 
+                        data-lon="44.5432" 
+                        data-label="ЦПКиО"
+                    >
+                        <div class="map__aside-header">
+                            <h3 class="map__aside-title">ЦПКиО</h3>
+                            <span class="map__aside-icon">
+                                <svg width="30" height="36" viewBox="0 0 30 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M15 36C14.5 36 14.0156 35.9223 13.5469 35.7668C13.0781 35.6114 12.6875 35.3782 12.375 35.0674C8.25 31.2746 5.15625 27.7306 3.09375 24.4352C1.03125 21.1399 0 18.0933 0 15.2953C0 10.943 1.42188 7.3057 4.26563 4.38342C7.10938 1.46114 10.6875 0 15 0C19.3125 0 22.8906 1.46114 25.7344 4.38342C28.5781 7.3057 30 10.943 30 15.2953C30 18.0933 28.9688 21.1399 26.9062 24.4352C24.8438 27.7306 21.75 31.2746 17.625 35.0674C17.3125 35.3782 16.9219 35.6114 16.4531 35.7668C15.9844 35.9223 15.5 36 15 36ZM15 18.6528C16.125 18.6528 17.0781 18.2642 17.8594 17.487C18.6406 16.7098 19.0312 15.7617 19.0312 14.6425C19.0312 13.5233 18.6406 12.5751 17.8594 11.7979C17.0781 11.0207 16.125 10.6321 15 10.6321C13.875 10.6321 12.9219 11.0207 12.1406 11.7979C11.3594 12.5751 10.9687 13.5233 10.9687 14.6425C10.9687 15.7617 11.3594 16.7098 12.1406 17.487C12.9219 18.2642 13.875 18.6528 15 18.6528Z" fill="#95C11F"/>
+                                    </svg>
+                            </span>
+                        </div>
+                        <div class="map__aside-footer">
+                            <p class="map__aside-footer-title">Часы работы:</p>
+                            <p class="map__aside-footer-worktime">Пн-Пт:  9:00-19:00 <br> Сб-Вс: 9:00-21:00</p>
+                        </div>
+                    </div>
+
+                    <div 
+                        class="map__aside-container frame" 
+                        data-lat="48.4791" 
+                        data-lon="44.4737" 
+                        data-label="Чуйкова"
+                    >
+                        <div class="map__aside-header">
+                            <h3 class="map__aside-title">Чуйкова</h3>
+                            <span class="map__aside-icon">
+                                <svg width="30" height="36" viewBox="0 0 30 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M15 36C14.5 36 14.0156 35.9223 13.5469 35.7668C13.0781 35.6114 12.6875 35.3782 12.375 35.0674C8.25 31.2746 5.15625 27.7306 3.09375 24.4352C1.03125 21.1399 0 18.0933 0 15.2953C0 10.943 1.42188 7.3057 4.26563 4.38342C7.10938 1.46114 10.6875 0 15 0C19.3125 0 22.8906 1.46114 25.7344 4.38342C28.5781 7.3057 30 10.943 30 15.2953C30 18.0933 28.9688 21.1399 26.9062 24.4352C24.8438 27.7306 21.75 31.2746 17.625 35.0674C17.3125 35.3782 16.9219 35.6114 16.4531 35.7668C15.9844 35.9223 15.5 36 15 36ZM15 18.6528C16.125 18.6528 17.0781 18.2642 17.8594 17.487C18.6406 16.7098 19.0312 15.7617 19.0312 14.6425C19.0312 13.5233 18.6406 12.5751 17.8594 11.7979C17.0781 11.0207 16.125 10.6321 15 10.6321C13.875 10.6321 12.9219 11.0207 12.1406 11.7979C11.3594 12.5751 10.9687 13.5233 10.9687 14.6425C10.9687 15.7617 11.3594 16.7098 12.1406 17.487C12.9219 18.2642 13.875 18.6528 15 18.6528Z" fill="#95C11F"/>
+                                    </svg>
+                            </span>
+                        </div>
+                        <div class="map__aside-footer">
+                            <p class="map__aside-footer-title">Часы работы:</p>
+                            <p class="map__aside-footer-worktime">Пн-Пт:  9:00-19:00 <br> Сб-Вс: 9:00-21:00</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="map__container" id="yandex-map"></div>
+            </div>
+        </section>
+
+        <section class="questions">
+            <div class="questions__body container frame">
+                <h2 class="questions__title">Отвечаем <span class="no-wrap">на&nbsp;самые</span> <br> частые вопросы</h2>
+                <ul class="questions__list">
+                    <li class="questions__item">
+                        <details class="questions__accordion">
+                            <summary class="questions__accordion-header">
+                                <h3 class="questions__accordion-title">Вопрос 1</h3>
+                                <span class="questions__accordion-indicator"></span>
+                            </summary>
+                            <div class="questions__accordion-body">
+                                <p class="questions__accordion-text">
+                                    Ответ на вопрос <span class="no-wrap">по&nbsp;аренде</span> самокатов и велосипедов номер 1 Ответ <span class="no-wrap">на&nbsp;вопрос</span> <span class="no-wrap">по&nbsp;аренде</span> самокатов и велосипедов номер 1 Ответ <span class="no-wrap">на&nbsp;вопрос</span> <span class="no-wrap">по&nbsp;аренде</span> самокатов и велосипедов номер 1 Ответ <span class="no-wrap">на&nbsp;вопрос</span> <span class="no-wrap">по&nbsp;аренде</span> самокатов и велосипедов номер 1 
+                                </p>
+                            </div>
+                        </details>
+                    </li>
+                    <li class="questions__item">
+                        <details class="questions__accordion">
+                            <summary class="questions__accordion-header">
+                                <h3 class="questions__accordion-title">Вопрос 1</h3>
+                                <span class="questions__accordion-indicator"></span>
+                            </summary>
+                            <div class="questions__accordion-body">
+                                <p class="questions__accordion-text">
+                                    Ответ на вопрос <span class="no-wrap">по&nbsp;аренде</span> самокатов и велосипедов номер 1 Ответ <span class="no-wrap">на&nbsp;вопрос</span> <span class="no-wrap">по&nbsp;аренде</span> самокатов и велосипедов номер 1 Ответ <span class="no-wrap">на&nbsp;вопрос</span> <span class="no-wrap">по&nbsp;аренде</span> самокатов и велосипедов номер 1 Ответ <span class="no-wrap">на&nbsp;вопрос</span> <span class="no-wrap">по&nbsp;аренде</span> самокатов и велосипедов номер 1 
+                                </p>
+                            </div>
+                        </details>
+                    </li>
+                    <li class="questions__item">
+                        <details class="questions__accordion">
+                            <summary class="questions__accordion-header">
+                                <h3 class="questions__accordion-title">Вопрос 1</h3>
+                                <span class="questions__accordion-indicator"></span>
+                            </summary>
+                            <div class="questions__accordion-body">
+                                <p class="questions__accordion-text">
+                                    Ответ на вопрос <span class="no-wrap">по&nbsp;аренде</span> самокатов и велосипедов номер 1 Ответ <span class="no-wrap">на&nbsp;вопрос</span> <span class="no-wrap">по&nbsp;аренде</span> самокатов и велосипедов номер 1 Ответ <span class="no-wrap">на&nbsp;вопрос</span> <span class="no-wrap">по&nbsp;аренде</span> самокатов и велосипедов номер 1 Ответ <span class="no-wrap">на&nbsp;вопрос</span> <span class="no-wrap">по&nbsp;аренде</span> самокатов и велосипедов номер 1 
+                                </p>
+                            </div>
+                        </details>
+                    </li>
+                    <li class="questions__item">
+                        <details class="questions__accordion">
+                            <summary class="questions__accordion-header">
+                                <h3 class="questions__accordion-title">Вопрос 1</h3>
+                                <span class="questions__accordion-indicator"></span>
+                            </summary>
+                            <div class="questions__accordion-body">
+                                <p class="questions__accordion-text">
+                                    Ответ на вопрос <span class="no-wrap">по&nbsp;аренде</span> самокатов и велосипедов номер 1 Ответ <span class="no-wrap">на&nbsp;вопрос</span> <span class="no-wrap">по&nbsp;аренде</span> самокатов и велосипедов номер 1 Ответ <span class="no-wrap">на&nbsp;вопрос</span> <span class="no-wrap">по&nbsp;аренде</span> самокатов и велосипедов номер 1 Ответ <span class="no-wrap">на&nbsp;вопрос</span> <span class="no-wrap">по&nbsp;аренде</span> самокатов и велосипедов номер 1 
+                                </p>
+                            </div>
+                        </details>
+                    </li>
+                    
+                </ul>
+            </div>
+        </section>
+
+        <section class="form" data-form-container>
+            <form class="email-form" action="/" data-form>
+                <div class="form__body container" data-form-body>
+                    <div class="form__header" data-form-header>
+                        <h2 class="form__header-title">Остались вопросы <span class="no-wrap">по&nbsp;аренде</span>?</h2>
+                        <p class="form__header-subtitle">Оставьте свой номер телефона и наши менеджеры свяжутся <span class="no-wrap">с&nbsp;Вами</span> <span class="no-wrap">в&nbsp;ближайшее</span> время.</p>
+                    </div>
+                    <div class="form__main" data-form-main>
+                        <div class="form__success is-hidden" data-form-success>
+                            <h2>Спасибо за подписку!</h2>
+                        </div>
+                        <div class="form__inputs" data-form-inputs>
+                            <label class="form__label" for="firstName"></label>
+                            <input 
+                                class="form__input" 
+                                id="firstName" 
+                                placeholder="Имя*" 
+                                required
+                            />
+                            <label class="form__label" for="phoneNumber"></label>
+                            <input 
+                                class="form__input" 
+                                id="phoneNumber" 
+                                placeholder="Номер телефона*" 
+                                type="number"
+                                required
+                            />
+                        </div>
+                        <button 
+                            class="form__main-button button-form"
+                            type="submit"
+                            data-form-submit
+                        >
+                            Отправить
+                        </button>
+                        <button 
+                            href="" 
+                            class="form-button__home is-hidden" data-form-home
+                        >
+                        Спасибо за подписку!
+                    </button>
+                        <p class="form__agreement" data-form-agreement>Нажимая кнопку «Отправить», вы принимаете согласие <span class="no-wrap">на&nbsp;обработку</span> персональных данных</p>
+                    </div>
+                </div>
+            </form>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer__inner container">
+            <div class="footer__socials frame">
+                <a 
+                class="footer__logo logo-accent" 
+                href="/"
+                aria-label="Home"
+                title="Home"
+            >
+                <img
+                    class="logo__image"
+                    src="./images/logo-accent.svg" 
+                    alt=""
+                    width="190"
+                    height="35"
+                >
+            </a>
+            <div class="footer__socials-list">
+                    <a 
+                        class="footer__socials-link" 
+                        href="/" 
+                        target="_blank" 
+                        aria-label="WhatsApp"
+                        title="WhatsApp"
+                    >
+                        <img src="./icons/WhatsApp.svg" alt="" loading="lazy">
+                    </a>
+
+                    <a 
+                        class="footer__socials-link" 
+                        href="/" 
+                        target="_blank" 
+                        aria-label="Vk"
+                        title="Vk"
+                    >
+                        <img src="./icons/Vk.svg" alt="" loading="lazy">
+                    </a>
+
+                    <a 
+                        class="footer__socials-link" 
+                        href="/" 
+                        target="_blank" 
+                        aria-label="Telegram"
+                        title="Telegram"
+                    >
+                        <img src="./icons/Telegram.svg" alt="" loading="lazy">
+                    </a>
+                </div>
+            </ul>
+            </div>
+
+            <div class="footer__advice frame">
+                <p>Мы предлагаем самый большой выбор транспорта в г.Волгоград по самым лучшим ценам.</p>
+            </div>
+
+            <div class="footer__contacts frame">
+                <div class="footer__contacts-mobile">
+                    <p class="footer__contacts-subtitle">
+                        Телефон
+                    </p>
+                    <a class="footer__contacts-tel" href="tel:+70000000000">
+                        +7 000 000 00 00
+                    </a>
+                </div>
+                <div class="footer__contacts-mail">
+                    <p class="footer__contacts-subtitle">
+                        E-mail
+                    </p>
+                    <a class="footer__contacts-email" href="mail:kataiberi@samokat.com">
+                        kataiberi@samokat.com
+                    </a>
+                </div>
+                <div class="footer__contacts-contact-us">
+                    <p class="footer__contacts-subtitle">
+                        По вопросам поддержки
+                    </p>
+                    <a class="footer__contacts-contact-us-link" href="/">
+                        Связаться с нами
+                    </a>
+                </div>
+            </div>
+            <div class="footer__extra frame">
+                <div class="footer__extra-place">
+                    <p class="footer__extra-subtitle">
+                        Адрес
+                    </p>
+                    <p class="footer__extra-address">
+                        г. Волгоград <br>
+                        ул. Маршала Чуйкова, 11 <br>
+                        (вход напротив МузКомедии)
+                    </p>
+                </div>
+                <div class="footer__extra-user">
+                    <a class="footer__extra-price" href="/">Прайс</a>
+                    <a class="footer__extra-terms" href="/">Условия оплаты и проката </a>
+                    <a class="footer__extra-agreement" href="/">Согласие на рассылку</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <div class="pop-up" id="want-to-ride-popup" data-popup>
+        <form class="number-form" action="/" data-form>
+            <div class="pop-up__container" data-form-body>
+                <span class="pop-up__cross" aria-label="Закрыть поп-ап" data-popup-close></span>
+                <div class="pop-up__header" data-form-header>
+                    <h2 class="pop-up__header-title">Оставьте заявку</h2>
+                    <p class="pop-up__header-subtitle">Оставьте свой номер телефона и наши менеджеры свяжутся с Вами в ближайшее время.</p>
+                </div>
+                <div class="pop-up__main" data-form-main>
+                    <div class="pop-up__success is-hidden" data-form-success>
+                        <span class="pop-up__tag-icon"></span>
+                        <h2>Заявка успешно отправлена!</h2>
+                        <p>В ближайшее время с Вами свяжется наш менеджер для уточнения деталей аренды.</p>
+                    </div>
+                    <div class="pop-up__inputs" data-form-inputs>
+                        <label class="pop-up__label" for="want-firstName"></label>
+                        <input 
+                            class="pop-up__input" 
+                            id="want-firstName" 
+                            name="firstName"
+                            placeholder="Имя*" 
+                            required
+                        />
+                        <label class="pop-up__label" for="want-phoneNumber"></label>
+                        <input 
+                            class="pop-up__input" 
+                            id="want-phoneNumber" 
+                            name="phoneNumber"
+                            placeholder="Номер телефона*" 
+                            type="tel"
+                            required
+                        />
+                    </div>
+                    <button 
+                        class="pop-up__main-button button-form button--green" 
+                        type="submit"
+                        data-form-submit
+                    >
+                        Отправить
+                    </button>
+                    <a href="index.html" class="button-form pop-up__home is-hidden" data-form-home>На главную</a>
+                    <p class="pop-up__agreement" data-form-agreement>Нажимая кнопку «Отправить», вы принимаете согласие на обработку персональных данных</p>
+                </div>
+            </div>
+        </form>
+    </div>
+    
+    <div class="pop-up" id="rent-popup" data-popup>
+        <form class="number-form" action="/" data-form>
+            <div class="pop-up__container" data-form-body>
+                <span class="pop-up__cross" aria-label="Закрыть поп-ап" data-popup-close></span>
+                <div class="pop-up__header" data-form-header>
+                    <h2 class="pop-up__header-title">Оставьте заявку</h2>
+                    <p class="pop-up__header-subtitle">Оставьте свой номер телефона и желаемую дату аренды и наши менеджеры свяжутся с Вами в ближайшее время для подтверждения аренды</p>
+                </div>
+                <div class="pop-up__main" data-form-main>
+                    <div class="pop-up__success is-hidden" data-form-success>
+                        <span class="pop-up__tag-icon"></span>
+                        <h2>Заявка успешно отправлена!</h2>
+                        <p>В ближайшее время с Вами свяжется наш менеджер для уточнения деталей аренды.</p>
+                    </div>
+                    <div class="pop-up__inputs" data-form-inputs>
+                        <label class="pop-up__label" for="rent-firstName"></label>
+                        <input 
+                            class="pop-up__input" 
+                            id="rent-firstName" 
+                            name="firstName"
+                            placeholder="Имя*" 
+                            required
+                        />
+                        <label class="pop-up__label" for="rent-phoneNumber"></label>
+                        <input 
+                            class="pop-up__input" 
+                            id="rent-phoneNumber" 
+                            name="phoneNumber"
+                            placeholder="Номер телефона*" 
+                            type="tel"
+                            required
+                        />
+                        <label class="pop-up__label" for="rent-date"></label>
+                        <input 
+                            class="pop-up__input" 
+                            id="rent-date" 
+                            name="date"
+                            placeholder="Желаемая дата*" 
+                            type="date"
+                            required
+                        />
+                    </div>
+                    <button 
+                        class="pop-up__main-button button-form button--green" 
+                        type="submit"
+                        data-form-submit
+                    >
+                        Отправить
+                    </button>
+                    <a href="index.html" class="button-form button--green pop-up__home is-hidden" data-form-home>На главную</a>
+                    <p class="pop-up__agreement" data-form-agreement>Нажимая кнопку «Отправить», вы принимаете согласие на обработку персональных данных</p>
+                </div>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

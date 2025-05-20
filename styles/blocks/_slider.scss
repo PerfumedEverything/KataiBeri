@@ -1,0 +1,45 @@
+@use '../helpers' as *;
+
+.slider {
+    position: relative;
+
+    &__list {
+        display: flex;
+        gap: rem(20);
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    &__item {
+        flex: 0 0 auto;
+        scroll-snap-align: start;
+    }
+
+    &__pagination {
+        display: flex;
+        justify-content: center;
+        gap: rem(10);
+        margin-top: rem(20);
+    }
+
+    &__pagination-dot {
+        width: rem(10);
+        height: rem(10);
+        border-radius: 50%;
+        background-color: var(--color-gray-4, #ccc);
+        border: none;
+        cursor: pointer;
+        transition: background-color 0.3s;
+
+        &.is-active,
+        &:hover {
+            background-color: var(--color-green, #28a745);
+        }
+
+        &:disabled {
+            cursor: default;
+            background-color: var(--color-green, #28a745);
+        }
+    }
+}

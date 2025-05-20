@@ -1,0 +1,78 @@
+@use '../helpers' as *;
+
+.grid {
+    &-services {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(2, auto);   
+        gap: rem(20);
+
+        @include tablet {
+            gap: rem(15);
+        }
+
+        @include mobile {
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: repeat(3, 1fr);
+            gap: rem(10);
+        }
+
+        @include mobile-s {
+            display: flex;
+            flex-direction: column;
+        }
+    }
+
+    &-about {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: rem(20);
+        margin: 0;
+        padding: 0;
+
+        @include tablet {
+            grid-template-columns: repeat(2, 1fr);
+            gap: rem(15);
+        }
+
+        @include mobile {
+            display: flex;
+            flex-direction: column;
+        }
+    }
+
+    &-filters {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        margin: 0;
+        padding: 0;
+        gap: rem(20);
+        list-style: none;
+
+        @include tablet {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        @include mobile {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    &-about-alt {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(2, auto);
+        gap: rem(20);
+
+        @include tablet {
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: repeat(3, 1fr);
+            gap: rem(15);
+        }
+
+        @include mobile {
+            display: flex;
+            flex-direction: column;
+        }
+    }
+}

@@ -1,0 +1,14 @@
+@use '../helpers' as *;
+
+.services {
+    &__title {
+        text-align: center;
+        padding: rem(80) 0;
+    }
+
+    &__item {
+        &-extra {
+            grid-column: span 2;
+        }
+    }
+}
