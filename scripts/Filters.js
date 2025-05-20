@@ -106,13 +106,11 @@ class Filters {
       block.classList.toggle(this.stateClasses.hidden, visibleCount === 0);
     });
 
-    // Управление сообщением об отсутствии товаров
     if (this.noResults) {
       this.noResults.classList.toggle(this.stateClasses.hidden, totalVisibleCount > 0);
       this.noResults.classList.toggle(this.stateClasses.visible, totalVisibleCount === 0);
     }
 
-    // Скрыть кнопку "Показать больше", если нет товаров
     if (this.showToggleButton) {
       this.showToggleButton.classList.toggle(this.stateClasses.hidden, totalVisibleCount === 0);
     }
