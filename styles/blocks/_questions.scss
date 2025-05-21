@@ -48,7 +48,7 @@
                 color: var(--color-white);
             }
             .questions__accordion-indicator::before {
-                background: url(../../icons/indicator-arrow-down-hover.svg);
+                background: url(./icons/indicator-arrow-down-hover.svg);
             }
         }
     }
@@ -57,7 +57,7 @@
 
         &[open] {
             .questions__accordion-indicator::before {
-                background: url(../../icons/indicator-arrow-open.svg);
+                background: url(./icons/indicator-arrow-open.svg);
             }
         }
         &-header {
@@ -79,7 +79,7 @@
                 content: '';
                 width: 100%;
                 height: 100%;
-                background: url(../../icons/indicator-arrow-down.svg);
+                background: url(./icons/indicator-arrow-down.svg);
             }
         }
     }
