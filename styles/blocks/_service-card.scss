@@ -12,19 +12,19 @@
     transition-duration: var(--transition-duration);
 
     &[data-bg="bike"]{
-        background: url(./images/services-bg-bike.png) 100%/cover no-repeat;
+        background: url(/images/services-bg-bike.png) 100%/cover no-repeat;
     }
     &[data-bg="supboard"]{
-        background: url(./images/services-bg-supboard.png) 100%/cover no-repeat;
+        background: url(/images/services-bg-supboard.png) 100%/cover no-repeat;
     }
     &[data-bg="samokat"]{
-        background: url(./images/services-bg-samokat.png) 100%/cover no-repeat;
+        background: url(/images/services-bg-samokat.png) 100%/cover no-repeat;
     }
     &[data-bg="fat-bike"]{
-        background: url(./images/services-bg-fatbike.png) 100%/cover no-repeat;
+        background: url(/images/services-bg-fatbike.png) 100%/cover no-repeat;
     }
     &[data-bg="extra"]{
-        background: url(./images/services-bg-extra.png) 100%/cover no-repeat;
+        background: url(/images/services-bg-extra.png) 100%/cover no-repeat;
     }
 
     @include hover {
