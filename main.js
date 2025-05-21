@@ -1,9 +1,9 @@
-import Header from './Header.js';
-import Slider from './Slider.js';
-import Filters from './Filters.js';
-import FiltersPanel from './FiltersPanel.js';
-import Popup from './Popup.js';
-import Map from './Map.js';
+import Header from './scripts/Header.js';
+import Slider from './scripts/Slider.js';
+import Filters from './scripts/Filters.js';
+import FiltersPanel from './scripts/FiltersPanel.js';
+import Popup from './scripts/Popup.js';
+import Map from './scripts/Map.js';
 
 document.addEventListener('DOMContentLoaded', () => {
     if (document.querySelector('[data-js-header]')) new Header();
