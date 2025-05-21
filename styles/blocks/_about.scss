@@ -31,11 +31,11 @@
 
         &[data-bg="main"] {
             grid-column: span 2;
-            background: url(../../images/about-bg-main.png) 100%/cover no-repeat;
+            background: url(./images/about-bg-main.png) 100%/cover no-repeat;
         }
 
         &[data-bg="accent-light"] {
-            background: url(../../images/about-bg-accent-light.png) 100%/cover no-repeat;
+            background: url(./images/about-bg-accent-light.png) 100%/cover no-repeat;
 
             & p {
                 color: var(--color-accent);
