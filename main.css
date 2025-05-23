@@ -2143,9 +2143,13 @@ a {
   color: var(--color-gray-4);
 }
 .pop-up__input[type=date] {
-  -webkit-appearance: menulist;
-  -moz-appearance: menulist;
-  appearance: menulist;
+  -webkit-appearance: textfield;
+  -moz-appearance: textfield;
+  appearance: textfield;
+  border-radius: 0;
+  background-color: var(--color-white);
+  padding-right: 1.25rem;
+  cursor: pointer;
 }
 .pop-up__input[type=date]::-webkit-inner-spin-button, .pop-up__input[type=date]::-webkit-calendar-picker-indicator {
   display: none;

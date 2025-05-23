@@ -126,16 +126,20 @@
         }
 
         &[type="date"] {
-            -webkit-appearance: menulist; 
-            -moz-appearance: menulist;
-            appearance: menulist;
+            -webkit-appearance: textfield; 
+            -moz-appearance: textfield;
+            appearance: textfield;
+            border-radius: 0;
+            background-color: var(--color-white);
+            padding-right: 1.25rem; 
+            cursor: pointer;
         }
-        
+
         &[type="date"]::-webkit-inner-spin-button,
         &[type="date"]::-webkit-calendar-picker-indicator {
             display: none;
             -webkit-appearance: none;
-}
+        }
     }
 
     &__agreement {
