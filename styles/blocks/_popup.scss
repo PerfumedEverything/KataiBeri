@@ -134,7 +134,7 @@
             background-color: var(--color-white);
             color: var(--color-dark);
             border-radius: rem(24); 
-            padding: rem(15) rem(20);
+            padding: rem(15) rem(20) !important;
             font-size: inherit;
             line-height: normal; 
             cursor: pointer;
@@ -154,6 +154,10 @@
             top: 50%;
             transform: translateY(-50%);
             pointer-events: none; 
+        }
+
+        &[type="date"]:not([value=""])::before {
+            content: none; 
         }
 
         &[type="date"]::-webkit-datetime-edit,

@@ -2150,7 +2150,7 @@ a {
   background-color: var(--color-white);
   color: var(--color-dark);
   border-radius: 1.5rem;
-  padding: 0.9375rem 1.25rem;
+  padding: 0.9375rem 1.25rem !important;
   font-size: inherit;
   line-height: normal;
   cursor: pointer;
@@ -2168,6 +2168,9 @@ a {
   top: 50%;
   transform: translateY(-50%);
   pointer-events: none;
+}
+.pop-up__input[type=date]:not([value=""])::before {
+  content: none;
 }
 .pop-up__input[type=date]::-webkit-datetime-edit, .pop-up__input[type=date]::-webkit-datetime-edit-text, .pop-up__input[type=date]::-webkit-datetime-edit-month-field, .pop-up__input[type=date]::-webkit-datetime-edit-day-field, .pop-up__input[type=date]::-webkit-datetime-edit-year-field {
   padding: 0;
