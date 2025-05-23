@@ -87,7 +87,7 @@
         &-subtitle {
             @include fluid-text(14,10);
 
-            color: var(--color-gray-7);
+            color: var(--color-gray-dark);
         }
 
         &-mobile {
@@ -145,7 +145,7 @@
         &-subtitle {
             @include fluid-text(14,10);
 
-            color: var(--color-gray-7);
+            color: var(--color-gray-dark);
         }
         
         &-address {
@@ -162,7 +162,7 @@
             a {
                 @include fluid-text(12, 10);
 
-                color: var(--color-gray-7);
+                color: var(--color-gray-dark);
                 text-wrap: nowrap;
 
                 @include hover {

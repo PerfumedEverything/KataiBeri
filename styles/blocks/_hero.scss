@@ -50,14 +50,14 @@
     &__subtitle {
         @include fluid-text(20, 16);
 
-        color: var(--color-gray);
+        color: var(--color-dark);
         font-weight: 400;
     }
 
     &__price {
         @include fluid-text(28, 20);
 
-        color: var(--color-gray);
+        color: var(--color-dark);
         font-weight: 500;
     }
 

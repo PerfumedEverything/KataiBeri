@@ -27,19 +27,19 @@
         width: rem(10);
         height: rem(10);
         border-radius: 50%;
-        background-color: var(--color-gray-4, #ccc);
+        background-color: var(--color-gray);
         border: none;
         cursor: pointer;
         transition: background-color 0.3s;
 
         &.is-active,
         &:hover {
-            background-color: var(--color-green, #28a745);
+            background-color: var(--color-green);
         }
 
         &:disabled {
             cursor: default;
-            background-color: var(--color-green, #28a745);
+            background-color: var(--color-green);
         }
     }
 }

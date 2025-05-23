@@ -79,7 +79,7 @@
         margin: 0;
 
         &::placeholder {
-            color: var(--color-gray-4);
+            color: var(--color-gray-dark);
         }
 
         @include mobile {
