@@ -2154,6 +2154,23 @@ a {
   font-size: inherit;
   line-height: normal;
   cursor: pointer;
+  display: block;
+}
+.pop-up__input[type=date]:not([value=""])::-webkit-datetime-edit {
+  color: var(--color-dark);
+}
+.pop-up__input[type=date][value=""]::before {
+  content: "Выберите дату";
+  color: var(--color-gray);
+  position: absolute;
+  left: 1.25rem;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+.pop-up__input[type=date]::-webkit-datetime-edit, .pop-up__input[type=date]::-webkit-datetime-edit-text, .pop-up__input[type=date]::-webkit-datetime-edit-month-field, .pop-up__input[type=date]::-webkit-datetime-edit-day-field, .pop-up__input[type=date]::-webkit-datetime-edit-year-field {
+  padding: 0;
+  color: var(--color-dark);
 }
 .pop-up__input[type=date]::-webkit-inner-spin-button, .pop-up__input[type=date]::-webkit-calendar-picker-indicator {
   display: none;
