@@ -47,10 +47,10 @@
             margin: rem(30) 0;
 
             &-dot {
-                width: rem(50);
-                height: rem(30);
+                @include square(rem(20));
+                
                 border: none;
-                border-radius: rem(55);
+                border-radius: 50%;
                 cursor: pointer;
                 background-color: var(--color-accent-light);
 

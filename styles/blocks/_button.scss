@@ -8,7 +8,6 @@
     }
 }
 
-
 .button {
     background-color: var(--color-accent);
     border-radius: rem(50);
@@ -107,7 +106,6 @@
     }
 }
 
-
 .filters__buttons {
     display: flex;
     flex-direction: column;
@@ -121,6 +119,10 @@
 .filters__apply-button {
     @include reset-button;
 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    column-gap: rem(8);
     border-radius: rem(1000);
     padding: rem(26) 0;
     background-color: var(--color-accent);
@@ -128,6 +130,23 @@
 
     @include tablet {
         width: 100%;
+    }
+
+    &[data-filter-count] {
+
+        &::after {
+            @include square (rem(20));
+
+            content: attr(data-filter-count);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background-color: var(--color-white);
+            color: var(--color-dark);
+            font-size: rem(10);
+            font-weight: 500;
+        }
     }
 }
 

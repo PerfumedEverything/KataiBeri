@@ -29,6 +29,7 @@ class Filters {
     this.initBindings();
     this.bindEvents();
     this.initShowMore();
+    this.updateFilterCount();
   }
 
   initElements() {
@@ -151,17 +152,35 @@ class Filters {
     filterType === 'location' 
       ? this.handleLocationFilter(button, group)
       : this.handleCategoryFilter(button, group);
+    this.updateFilterCount();
   }
 
   handleLocationFilter(button, group) {
     const isAll = button.dataset.filter === 'all';
 
-    group.querySelectorAll(this.selectors.filterButton)
-      .forEach(btn => btn.classList.remove(this.stateClasses.active));
+    if (isAll) {
+      group.querySelectorAll(this.selectors.filterButton)
+        .forEach(btn => btn.classList.remove(this.stateClasses.active));
+      button.classList.add(this.stateClasses.active);
+    } else {
+      if (button.classList.contains(this.stateClasses.active)) {
+        button.classList.remove(this.stateClasses.active);
+      } else {
+        group.querySelectorAll(this.selectors.filterButton)
+          .forEach(btn => btn.classList.remove(this.stateClasses.active));
+        button.classList.add(this.stateClasses.active);
+      }
 
-    button.classList.add(this.stateClasses.active);
-
-    this.activeFilters.location = isAll ? null : button.dataset.filter;
+      const activeInGroup = Array.from(group.querySelectorAll(this.selectors.filterButton)).filter(
+        btn => btn.classList.contains(this.stateClasses.active) && btn.dataset.filter !== 'all'
+      );
+      if (activeInGroup.length === 0) {
+        group.querySelector('[data-filter="all"]')?.classList.add(this.stateClasses.active);
+      }
+    }
+    this.activeFilters.location = button.classList.contains(this.stateClasses.active) && !isAll 
+      ? button.dataset.filter 
+      : null;
   }
 
   handleCategoryFilter(button, group) {
@@ -172,9 +191,49 @@ class Filters {
         .forEach(btn => btn.classList.remove(this.stateClasses.active));
       button.classList.add(this.stateClasses.active);
     } else {
-      group.querySelector('[data-filter="all"]')
-        ?.classList.remove(this.stateClasses.active);
-      button.classList.toggle(this.stateClasses.active);
+      if (button.classList.contains(this.stateClasses.active)) {
+        button.classList.remove(this.stateClasses.active);
+      } else {
+        group.querySelector('[data-filter="all"]')
+          ?.classList.remove(this.stateClasses.active);
+        button.classList.add(this.stateClasses.active);
+      }
+      const activeInGroup = Array.from(group.querySelectorAll(this.selectors.filterButton)).filter(
+        btn => btn.classList.contains(this.stateClasses.active) && btn.dataset.filter !== 'all'
+      );
+      if (activeInGroup.length === 0) {
+        group.querySelector('[data-filter="all"]')?.classList.add(this.stateClasses.active);
+      }
+    }
+  }
+
+  /**
+   * Обновляет счетчик активных фильтров (категорий и локации) и устанавливает атрибут data-filter-count
+   * на кнопке .filters__apply-button.
+   */
+  updateFilterCount() {
+    // Находим все активные кнопки категорий (data-filter начинается с "category-")
+    const активныеКатегории = Array.from(this.filterButtons).filter(
+      кнопка => кнопка.classList.contains(this.stateClasses.active) && 
+                кнопка.dataset.filter.startsWith('category-')
+    );
+
+    // Находим активные кнопки локаций (data-filter начинается с "location-")
+    const активныеЛокации = Array.from(this.filterButtons).filter(
+      кнопка => кнопка.classList.contains(this.stateClasses.active) && 
+                кнопка.dataset.filter.startsWith('location-')
+    );
+
+    // Считаем общее количество: число категорий + 1, если есть активная локация
+    const счетчик = активныеКатегории.length + (активныеЛокации.length > 0 ? 1 : 0);
+
+    // Обновляем атрибут data-filter-count на кнопке "Применить"
+    if (this.applyButton) {
+      this.applyButton.setAttribute('data-filter-count', счетчик);
+      // Если счетчик равен 0, убираем атрибут
+      if (счетчик === 0) {
+        this.applyButton.removeAttribute('data-filter-count');
+      }
     }
   }
 
@@ -183,6 +242,7 @@ class Filters {
     this.isExpanded = false;
     this.updateVisibility();
     this.updateToggleButton();
+    this.updateFilterCount();
   }
 
   updateActiveFilters() {
@@ -196,11 +256,11 @@ class Filters {
       `${this.selectors.group} [data-filter^="category-"]`
     )?.closest(this.selectors.group);
     
-    if (categoryGroup.querySelector('[data-filter="all"].active')) {
+    if (categoryGroup && categoryGroup.querySelector('[data-filter="all"].active')) {
       this.activeFilters.categories = [];
-    } else {
+    } else if (categoryGroup) {
       this.activeFilters.categories = Array.from(
-        categoryGroup.querySelectorAll('.active')
+        categoryGroup.querySelectorAll('[data-filter^="category-"].active')
       ).map(btn => btn.dataset.filter);
     }
   }
@@ -217,6 +277,7 @@ class Filters {
     this.isExpanded = false;
     this.updateVisibility();
     this.updateToggleButton();
+    this.updateFilterCount();
   }
 }
 

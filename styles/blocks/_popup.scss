@@ -114,6 +114,9 @@
     }
 
     &__input {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
         padding: rem(15) rem(20);
         border: none;
         border-radius: rem(24);
@@ -121,6 +124,18 @@
         &::placeholder {
             color: var(--color-gray-4);
         }
+
+        &[type="date"] {
+            -webkit-appearance: menulist; 
+            -moz-appearance: menulist;
+            appearance: menulist;
+        }
+        
+        &[type="date"]::-webkit-inner-spin-button,
+        &[type="date"]::-webkit-calendar-picker-indicator {
+            display: none;
+            -webkit-appearance: none;
+}
     }
 
     &__agreement {

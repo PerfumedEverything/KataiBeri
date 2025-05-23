@@ -55,32 +55,34 @@
 
                 &.is-active {
 
+                    @include tablet {
+                        &::after {
+                            content: '';
+                            position: absolute;
+                            top: 50%;
+                            left: 50%;
+                            width: 100%; 
+                            height: rem(3);
+                            border-radius: rem(50);
+                            background-color: var(--color-dark);
+                            transform: translate(-50%, -50%) rotate(45deg);
+                            transform-origin: center;
+                        }
+                
+                        &::before {
+                            content: '';
+                            position: absolute;
+                            top: 50%;
+                            left: 50%;
+                            width: 100%; 
+                            height: rem(3);
+                            border-radius: rem(50);
+                            background-color: var(--color-dark);
+                            transform: translate(-50%, -50%) rotate(-45deg);
+                            transform-origin: center;
+                        }
+                    }
 
-                    &::after {
-                        content: '';
-                        position: absolute;
-                        top: 50%;
-                        left: 50%;
-                        width: 100%; 
-                        height: rem(3);
-                        border-radius: rem(50);
-                        background-color: var(--color-dark);
-                        transform: translate(-50%, -50%) rotate(45deg);
-                        transform-origin: center;
-                    }
-            
-                    &::before {
-                        content: '';
-                        position: absolute;
-                        top: 50%;
-                        left: 50%;
-                        width: 100%; 
-                        height: rem(3);
-                        border-radius: rem(50);
-                        background-color: var(--color-dark);
-                        transform: translate(-50%, -50%) rotate(-45deg);
-                        transform-origin: center;
-                    }
                 }
             }
         }
@@ -141,6 +143,7 @@
         padding: rem(150);
         background-color: var(--color-form-button);
         color: var(--color-accent);
+        border-radius: rem(55);
     }
 
     &__show-all {
