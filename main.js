@@ -6,18 +6,34 @@ import Popup from './scripts/Popup.js';
 import Map from './scripts/Map.js';
 import DateInput from './scripts/DateInput.js';
 
+function initSliders() {
+    const optionsSlider = document.querySelector('[data-js-options-slider]');
+    if (!optionsSlider) {
+        console.error('Options slider element not found');
+    } else {
+        new Slider(optionsSlider, true);
+    }
+
+    const reviewsSlider = document.querySelector('[data-js-reviews-slider]');
+    if (!reviewsSlider) {
+        console.error('Reviews slider element not found');
+    } else {
+        new Slider(reviewsSlider, false);
+    }
+}
+
 document.addEventListener('DOMContentLoaded', () => {
+    initSliders();
+
     if (document.querySelector('[data-js-header]')) new Header();
-
-    const optionsSlider = document.querySelector('.options-slider[data-js-slider]');
-    if (optionsSlider) new Slider(optionsSlider, true);
-
-    const reviewsSlider = document.querySelector('.reviews__slider[data-js-slider]');
-    if (reviewsSlider) new Slider(reviewsSlider, false);
-
     if (document.querySelector('[data-js-filters]')) new Filters();
     if (document.querySelector('[data-js-filters-panel]')) new FiltersPanel();
     new Popup();
     new Map();
     if (document.querySelector('.pop-up__input--date')) new DateInput();
 });
+
+// Проверка для динамической загрузки
+setTimeout(() => {
+    initSliders();
+}, 5000);
