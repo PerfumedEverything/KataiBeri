@@ -125,55 +125,6 @@
         &::placeholder {
             color: var(--color-gray-dark);
         }
-
-        &[type="date"] {
-            -webkit-appearance: textfield; 
-            -moz-appearance: textfield;
-            appearance: textfield;
-
-            background-color: var(--color-white);
-            color: var(--color-dark);
-            border-radius: rem(24); 
-            padding: rem(15) rem(20) !important;
-            font-size: inherit;
-            line-height: normal; 
-            cursor: pointer;
-            display: block;
-            position: relative;
-        }
-
-        &[type="date"]:not([value=""])::-webkit-datetime-edit {
-            color: var(--color-dark); 
-        }
-        
-        &[type="date"][value=""]::before {
-            content: "Выберите дату";
-            color: var(--color-gray);
-            position: absolute;
-            left: 1.25rem;
-            top: 50%;
-            transform: translateY(-50%);
-            pointer-events: none; 
-        }
-
-        &[type="date"]:not([value=""])::before {
-            content: none; 
-        }
-
-        &[type="date"]::-webkit-datetime-edit,
-        &[type="date"]::-webkit-datetime-edit-text,
-        &[type="date"]::-webkit-datetime-edit-month-field,
-        &[type="date"]::-webkit-datetime-edit-day-field,
-        &[type="date"]::-webkit-datetime-edit-year-field {
-            padding: 0; 
-            color: var(--color-dark);
-        }
-
-        &[type="date"]::-webkit-inner-spin-button,
-        &[type="date"]::-webkit-calendar-picker-indicator {
-            display: none;
-            -webkit-appearance: none;
-        }
     }
 
     &__agreement {

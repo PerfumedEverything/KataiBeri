@@ -4,6 +4,7 @@ import Filters from './scripts/Filters.js';
 import FiltersPanel from './scripts/FiltersPanel.js';
 import Popup from './scripts/Popup.js';
 import Map from './scripts/Map.js';
+import DateInput from './scripts/DateInput.js';
 
 document.addEventListener('DOMContentLoaded', () => {
     if (document.querySelector('[data-js-header]')) new Header();
@@ -18,4 +19,5 @@ document.addEventListener('DOMContentLoaded', () => {
     if (document.querySelector('[data-js-filters-panel]')) new FiltersPanel();
     new Popup();
     new Map();
+    if (document.querySelector('.pop-up__input--date')) new DateInput();
 });
