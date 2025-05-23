@@ -139,6 +139,7 @@
             line-height: normal; 
             cursor: pointer;
             display: block;
+            position: relative;
         }
 
         &[type="date"]:not([value=""])::-webkit-datetime-edit {

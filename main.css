@@ -2155,6 +2155,7 @@ a {
   line-height: normal;
   cursor: pointer;
   display: block;
+  position: relative;
 }
 .pop-up__input[type=date]:not([value=""])::-webkit-datetime-edit {
   color: var(--color-dark);
