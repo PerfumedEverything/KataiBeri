@@ -15,14 +15,14 @@
         <div class="header-inner container">
             <a 
                 class="header__logo logo" 
-                href="/"
+                href="./index.html"
                 aria-label="Home"
                 title="Home"
             >
                 <img
                     class="logo__image"
                     src="./images/logo.svg" 
-                    alt=""
+                    alt="Лого"
                     width="190"
                     height="35"
                 >
@@ -33,7 +33,7 @@
                         class="map__icon" 
                         src="./icons/map.svg" 
                         alt="" 
-                        width="24" 
+                        width="17" 
                         height="24"
                         loading="lazy"
                     >
@@ -44,17 +44,29 @@
                 <nav class="header__menu">
                     <ul class="header__menu-list">
                         <li class="header__menu-item">
-                            <a class="header__menu-link" href="./prokat.html">
+                            <a 
+                                class="header__menu-link" 
+                                href="./prokat.html"
+                                data-js-menu-item
+                            >
                                 Прокат
                             </a>
                         </li>
                         <li class="header__menu-item">
-                            <a class="header__menu-link" href="#reviews">
+                            <a 
+                                class="header__menu-link" 
+                                href="#reviews"
+                                data-js-menu-item
+                            >
                                 Отзывы
                             </a>
                         </li>
                         <li class="header__menu-item">
-                            <a class="header__menu-link" href="#map">
+                            <a 
+                                class="header__menu-link" 
+                                href="#map"
+                                data-js-menu-item
+                            >
                                 Карта
                             </a>
                         </li>
@@ -101,7 +113,11 @@
                 </div>
             </div>
     
-                <a class="header__want-to-ride-button button--green hidden-tablet" href="#" data-popup-open="want-to-ride">
+                <a 
+                    class="header__want-to-ride-button button--green hidden-tablet" 
+                    href="#" 
+                    data-popup-open="want-to-ride"
+                >
                     Хочу катать
                 </a>
 
