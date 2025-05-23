@@ -114,12 +114,13 @@
     }
 
     &__input {
-        -webkit-appearance: none;
-        -moz-appearance: none;
-        appearance: none;
         padding: rem(15) rem(20);
         border: none;
         border-radius: rem(24);
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        line-height: normal;
 
         &::placeholder {
             color: var(--color-gray-4);
@@ -129,9 +130,13 @@
             -webkit-appearance: textfield; 
             -moz-appearance: textfield;
             appearance: textfield;
-            border-radius: 0;
+
             background-color: var(--color-white);
-            padding-right: 1.25rem; 
+            color: var(--color-dark);
+            border-radius: rem(24); 
+            padding: rem(15) rem(20);
+            font-size: inherit;
+            line-height: normal; 
             cursor: pointer;
         }
 
