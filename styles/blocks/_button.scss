@@ -163,10 +163,9 @@
 }
 
 .button--whatsapp {
-    @include tablet {
-        @include square(rem(50));
+    @include square(rem(50));
 
-        position: relative;
+    position: relative;
 
         &::before {
             position: absolute;
@@ -201,10 +200,9 @@
             opacity: 1;
         }
     }
-}
+
 
 .button--vk {
-    @include tablet {
         @include square(rem(50));
 
         position: relative;
@@ -242,10 +240,8 @@
             opacity: 1;
         }
     }
-}
 
 .button--telegram {
-    @include tablet {
         @include square(rem(50));
 
         position: relative;
@@ -283,4 +279,3 @@
             opacity: 1;
         }
     }
-}

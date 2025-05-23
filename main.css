@@ -550,115 +550,109 @@ a {
   }
 }
 
-@media (width <= 63.99875rem) {
-  .button--whatsapp {
-    width: 3.125rem;
-    height: 3.125rem;
-    position: relative;
-  }
-  .button--whatsapp::before {
-    position: absolute;
-    content: "";
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: url(./icons/whatsapp-icon.svg) no-repeat center;
-    background-size: contain;
-    transition: opacity 0.3s ease;
-  }
-  .button--whatsapp:hover::before {
-    opacity: 0;
-  }
-  .button--whatsapp::after {
-    position: absolute;
-    content: "";
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: url(./icons/whatsapp-icon-hover.svg) no-repeat center;
-    background-size: contain;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-  }
-  .button--whatsapp:hover::after {
-    opacity: 1;
-  }
+.button--whatsapp {
+  width: 3.125rem;
+  height: 3.125rem;
+  position: relative;
+}
+.button--whatsapp::before {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url(./icons/whatsapp-icon.svg) no-repeat center;
+  background-size: contain;
+  transition: opacity 0.3s ease;
+}
+.button--whatsapp:hover::before {
+  opacity: 0;
+}
+.button--whatsapp::after {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url(./icons/whatsapp-icon-hover.svg) no-repeat center;
+  background-size: contain;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.button--whatsapp:hover::after {
+  opacity: 1;
 }
 
-@media (width <= 63.99875rem) {
-  .button--vk {
-    width: 3.125rem;
-    height: 3.125rem;
-    position: relative;
-  }
-  .button--vk::before {
-    position: absolute;
-    content: "";
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: url(./icons/vk-icon.svg) no-repeat center;
-    background-size: contain;
-    transition: opacity 0.3s ease;
-  }
-  .button--vk:hover::before {
-    opacity: 0;
-  }
-  .button--vk::after {
-    position: absolute;
-    content: "";
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: url(./icons/vk-icon-hover.svg) no-repeat center;
-    background-size: contain;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-  }
-  .button--vk:hover::after {
-    opacity: 1;
-  }
+.button--vk {
+  width: 3.125rem;
+  height: 3.125rem;
+  position: relative;
+}
+.button--vk::before {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url(./icons/vk-icon.svg) no-repeat center;
+  background-size: contain;
+  transition: opacity 0.3s ease;
+}
+.button--vk:hover::before {
+  opacity: 0;
+}
+.button--vk::after {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url(./icons/vk-icon-hover.svg) no-repeat center;
+  background-size: contain;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.button--vk:hover::after {
+  opacity: 1;
 }
 
-@media (width <= 63.99875rem) {
-  .button--telegram {
-    width: 3.125rem;
-    height: 3.125rem;
-    position: relative;
-  }
-  .button--telegram::before {
-    position: absolute;
-    content: "";
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: url(./icons/telegram-icon.svg) no-repeat center;
-    background-size: contain;
-    transition: opacity 0.3s ease;
-  }
-  .button--telegram:hover::before {
-    opacity: 0;
-  }
-  .button--telegram::after {
-    position: absolute;
-    content: "";
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: url(./icons/telegram-icon-hover.svg) no-repeat center;
-    background-size: contain;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-  }
-  .button--telegram:hover::after {
-    opacity: 1;
-  }
+.button--telegram {
+  width: 3.125rem;
+  height: 3.125rem;
+  position: relative;
+}
+.button--telegram::before {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url(./icons/telegram-icon.svg) no-repeat center;
+  background-size: contain;
+  transition: opacity 0.3s ease;
+}
+.button--telegram:hover::before {
+  opacity: 0;
+}
+.button--telegram::after {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url(./icons/telegram-icon-hover.svg) no-repeat center;
+  background-size: contain;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.button--telegram:hover::after {
+  opacity: 1;
 }
 
 .burger-button {
