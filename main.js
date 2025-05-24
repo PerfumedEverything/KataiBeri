@@ -34,6 +34,28 @@ function initAccordion() {
     });
 }
 
+function smoothScrollTo(element) {
+    const start = window.scrollY;
+    const target = element.getBoundingClientRect().top + start;
+    const duration = 600; // Длительность анимации в мс
+    let startTime = null;
+
+    function animation(currentTime) {
+        if (!startTime) startTime = currentTime;
+        const progress = Math.min((currentTime - startTime) / duration, 1);
+        const easeInOutQuad = progress < 0.5
+            ? 2 * progress * progress
+            : 1 - Math.pow(-2 * progress + 2, 2) / 2;
+        window.scrollTo(0, start + (target - start) * easeInOutQuad);
+
+        if (progress < 1) {
+            requestAnimationFrame(animation);
+        }
+    }
+
+    requestAnimationFrame(animation);
+}
+
 function initSmoothScroll() {
     document.querySelectorAll('a[href*="#"]').forEach(anchor => {
         anchor.addEventListener('click', (event) => {
@@ -45,14 +67,14 @@ function initSmoothScroll() {
                 event.preventDefault();
                 const target = document.getElementById(hash);
                 if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
+                    smoothScrollTo(target);
                     window.history.pushState(null, null, `#${hash}`);
                 } else {
                     console.warn(`Элемент с id="${hash}" не найден`);
                 }
+            }
+            else if (hash && path !== currentPath) {
+                window.location.href = href;
             }
         });
     });
@@ -61,12 +83,7 @@ function initSmoothScroll() {
     if (initialHash) {
         const target = document.getElementById(initialHash);
         if (target) {
-            setTimeout(() => {
-                target.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start'
-                });
-            }, 100);
+            setTimeout(() => smoothScrollTo(target), 100); 
         }
     }
 }
@@ -77,10 +94,10 @@ document.addEventListener('DOMContentLoaded', () => {
     initSmoothScroll();
 
     if (document.querySelector('[data-js-header]')) new Header();
-    
+
     const filtersPanel = document.querySelector('[data-js-filters-panel]') ? new FiltersPanel() : null;
     if (document.querySelector('[data-js-filters]')) new Filters(filtersPanel);
-    
+
     new Popup();
     new Map();
     if (document.querySelector('.pop-up__input--date')) new DateInput();
