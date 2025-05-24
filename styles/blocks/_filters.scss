@@ -4,6 +4,14 @@
     &__title {
         text-align: center;
         margin: rem(80) 0;
+
+        @include tablet {
+            margin: rem(60) 0;
+        }
+
+        @include mobile {
+            margin: rem(40) 0;
+        }
     }
 
     &__body {
@@ -23,6 +31,10 @@
         flex-direction: column;
         flex: 1;
         row-gap: rem(12);
+
+        @include tablet-above {
+            pointer-events: none;
+        }
 
         @include tablet {
             position: static;

@@ -2,7 +2,7 @@
 
 .header {
     position: sticky;
-    z-index: 100 ;
+    z-index: 100;
     top: 0;
 
     &-inner {
@@ -44,24 +44,30 @@
     }
     
     &__overlay {
+
+        &-logo {
+            @include tablet-above {
+                display: none;
+            }
+        }
+
         @include tablet-above {
             display: contents;
         }
 
         @include tablet {
             position: fixed;
-            margin-top: rem(100);
             z-index: 90;
             inset: 0;
             display: flex;
             flex-direction: column;
             row-gap: rem(10);
-            padding: rem(20);
+            padding: rem(30);
             background-color: var(--color-white);
             transition-duration: var(--transition-duration);
 
             @include mobile {
-                padding: rem(10);
+                padding: rem(30) rem(20) rem(20) rem(20);
             }
 
             &:not(.is-active) {
@@ -69,14 +75,6 @@
                 
                 translate: 100%;
             }
-        }
-
-        @include mobile {
-            margin-top: rem(81);
-        }
-
-        @include mobile-s {
-            margin-top: rem(76);
         }
 
         &-tel {

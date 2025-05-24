@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="./main.css" />
 </head>
 <body>
-    <header class="header" data-js-header="">
+    <header class="header" data-js-header>
         <div class="header-inner container">
             <a 
                 class="header__logo logo" 
@@ -40,6 +40,21 @@
             </a>
 
             <div class="header__overlay" data-js-header-overlay>
+                <a 
+                    class="header__overlay-logo logo-accent" 
+                    href="./index.html"
+                    aria-label="Home"
+                    title="Home"
+                >
+                    <img
+                        class="logo__image"
+                        src="./images/logo-accent.svg" 
+                        alt=""
+                        width="190"
+                        height="35"
+                    >
+                </a>
+
                 <nav class="header__menu">
                     <ul class="header__menu-list">
                         <li class="header__menu-item">
@@ -148,7 +163,13 @@
                         width="490" height="490" loading="lazy"
                     >
                 </div>
-                <a class="hero__button button button--green" href="#" data-popup-open="want-to-ride">Хочу катать</a>
+                <a 
+                    class="hero__button button button--green" 
+                    href="#" 
+                    data-popup-open="want-to-ride"
+                >
+                Хочу катать
+                </a>
             </div>
         </section>
 
@@ -250,7 +271,11 @@
                                         <option value="2">1 час –– 300р</option>
                                         <option value="3">1 час –– 300р</option>
                                     </select>
-                                    <a class="option-card__link button button--green" href="#" data-popup-open="rent">
+                                    <a 
+                                        class="option-card__link button button--green" 
+                                        href="#" 
+                                        data-popup-open="rent"
+                                    >
                                         Арендовать
                                     </a>
                                 </article>
@@ -274,7 +299,11 @@
                                         <option value="2">1 час –– 300р</option>
                                         <option value="3">1 час –– 300р</option>
                                     </select>
-                                    <a class="option-card__link button button--green" href="#" data-popup-open="rent">
+                                    <a 
+                                        class="option-card__link button button--green" 
+                                        href="#" 
+                                        data-popup-open="rent"
+                                    >
                                         Арендовать
                                     </a>
                                 </article>
@@ -283,7 +312,7 @@
                         <div class="options__slider-pagination" data-js-options-slider-pagination></div>
                     </div>
 
-                    <button class="options__show-all button-light" href="prokat.html">Смотреть все</button>
+                    <button class="options__show-all button-light" href="./prokat.html">Смотреть все</button>
                 </div>
             </div>
         </section>
@@ -368,7 +397,7 @@
                             data-form-home
                         >
                         Спасибо за подписку!
-                    </button>
+                        </button>
                         <p class="form__agreement" data-form-agreement>Нажимая кнопку «Отправить», вы принимаете согласие на обработку персональных данных</p>
                     </div>
                 </div>
@@ -602,23 +631,23 @@
         <div class="footer__inner container">
             <div class="footer__socials frame">
                 <a 
-                class="footer__logo logo-accent" 
-                href="/"
-                aria-label="Home"
-                title="Home"
-            >
-                <img
-                    class="logo__image"
-                    src="./images/logo-accent.svg" 
-                    alt=""
-                    width="190"
-                    height="35"
+                    class="footer__logo logo-accent" 
+                    href="./index.html"
+                    aria-label="Home"
+                    title="Home"
                 >
-            </a>
-            <div class="footer__socials-list">
+                    <img
+                        class="logo__image"
+                        src="./images/logo-accent.svg" 
+                        alt="Лого"
+                        width="190"
+                        height="35"
+                    >
+                </a>
+                <div class="footer__socials-list">
                     <a 
                         class="footer__socials-link button--whatsapp" 
-                        href="/" 
+                        href="#" 
                         target="_blank" 
                         aria-label="WhatsApp"
                         title="WhatsApp"
@@ -627,7 +656,7 @@
 
                     <a 
                         class="footer__socials-link button--vk" 
-                        href="/" 
+                        href="#" 
                         target="_blank" 
                         aria-label="Vk"
                         title="Vk"
@@ -636,7 +665,7 @@
 
                     <a 
                         class="footer__socials-link button--telegram" 
-                        href="/" 
+                        href="#" 
                         target="_blank" 
                         aria-label="Telegram"
                         title="Telegram"
@@ -671,7 +700,7 @@
                     <p class="footer__contacts-subtitle">
                         По вопросам поддержки
                     </p>
-                    <a class="footer__contacts-contact-us-link" href="/">
+                    <a class="footer__contacts-contact-us-link" href="#">
                         Связаться с нами
                     </a>
                 </div>
@@ -688,18 +717,31 @@
                     </p>
                 </div>
                 <div class="footer__extra-user">
-                    <a class="footer__extra-price" href="/">Прайс</a>
-                    <a class="footer__extra-terms" href="/">Условия оплаты и проката </a>
-                    <a class="footer__extra-agreement" href="/">Согласие на рассылку</a>
+                    <a class="footer__extra-price" href="#">Прайс</a>
+                    <a class="footer__extra-terms" href="#">Условия оплаты и проката </a>
+                    <a class="footer__extra-agreement" href="#">Согласие на рассылку</a>
                 </div>
             </div>
         </div>
     </footer>
 
-    <div class="pop-up" id="want-to-ride-popup" data-popup>
-        <form class="number-form" action="/" data-form>
+    <div 
+        class="pop-up" 
+        id="want-to-ride-popup" 
+        data-popup
+    >
+        <form 
+            class="number-form" 
+            action="/" 
+            data-form
+        >
             <div class="pop-up__container" data-form-body>
-                <span class="pop-up__cross" aria-label="Закрыть поп-ап" data-popup-close></span>
+                <span 
+                    class="pop-up__cross" 
+                    aria-label="Закрыть поп-ап" 
+                    data-popup-close
+                >
+                </span>
                 <div class="pop-up__header" data-form-header>
                     <h2 class="pop-up__header-title">Оставьте заявку</h2>
                     <p class="pop-up__header-subtitle">Оставьте свой номер телефона и наши менеджеры свяжутся с Вами в ближайшее время.</p>
@@ -736,17 +778,35 @@
                     >
                         Отправить
                     </button>
-                    <a href="./index.html" class="button-form pop-up__home is-hidden" data-form-home>На главную</a>
+                    <a 
+                        href="./index.html" 
+                        class="button-form pop-up__home is-hidden" 
+                        data-form-home
+                    >
+                        На главную
+                    </a>
                     <p class="pop-up__agreement" data-form-agreement>Нажимая кнопку «Отправить», вы принимаете согласие на обработку персональных данных</p>
                 </div>
             </div>
         </form>
     </div>
     
-    <div class="pop-up" id="rent-popup" data-popup>
-        <form class="number-form" action="/" data-form>
+    <div 
+        class="pop-up" 
+        id="rent-popup" 
+        data-popup
+    >
+        <form 
+            class="number-form" 
+            action="/" data-form
+        >
             <div class="pop-up__container" data-form-body>
-                <span class="pop-up__cross" aria-label="Закрыть поп-ап" data-popup-close></span>
+                <span 
+                    class="pop-up__cross" 
+                    aria-label="Закрыть поп-ап" 
+                    data-popup-close
+                >
+                </span>
                 <div class="pop-up__header" data-form-header>
                     <h2 class="pop-up__header-title">Оставьте заявку</h2>
                     <p class="pop-up__header-subtitle">Оставьте свой номер телефона и желаемую дату аренды и наши менеджеры свяжутся с Вами в ближайшее время для подтверждения аренды</p>
@@ -797,7 +857,7 @@
                         class="button-form button--green pop-up__home is-hidden" 
                         data-form-home
                     >
-                    На главную
+                        На главную
                     </a>
                     <p class="pop-up__agreement" data-form-agreement>Нажимая кнопку «Отправить», вы принимаете согласие на обработку персональных данных</p>
                 </div>

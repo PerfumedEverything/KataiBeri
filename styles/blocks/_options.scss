@@ -4,6 +4,14 @@
     &__title {
         text-align: center;
         padding: rem(80) 0;
+
+        @include tablet {
+            padding: rem(60) 0;
+        }
+
+        @include mobile {
+            padding: rem(40) 0;
+        }
     }
 
     &__body {

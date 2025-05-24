@@ -11,7 +11,7 @@
     <script src="./main.js" type="module"></script>
 </head>
 <body>
-    <header class="header" data-js-header="">
+    <header class="header" data-js-header>
         <div class="header-inner container">
             <a 
                 class="header__logo logo" 
@@ -149,7 +149,6 @@
                         width="490" height="490" loading="lazy"
                     >
                 </div>
-                <a class="hero__button button button--green" href="#" data-popup-open="want-to-ride">Хочу катать</a>
             </div>
         </section>
 
@@ -1094,10 +1093,23 @@
         </div>
     </footer>
     
-    <div class="pop-up" id="want-to-ride-popup" data-popup>
-        <form class="number-form" action="/" data-form>
+    <div 
+        class="pop-up" 
+        id="want-to-ride-popup" 
+        data-popup
+    >
+        <form 
+            class="number-form" 
+            action="/" 
+            data-form
+        >
             <div class="pop-up__container" data-form-body>
-                <span class="pop-up__cross" aria-label="Закрыть поп-ап" data-popup-close></span>
+                <span 
+                    class="pop-up__cross" 
+                    aria-label="Закрыть поп-ап" 
+                    data-popup-close
+                >
+                </span>
                 <div class="pop-up__header" data-form-header>
                     <h2 class="pop-up__header-title">Оставьте заявку</h2>
                     <p class="pop-up__header-subtitle">Оставьте свой номер телефона и наши менеджеры свяжутся с Вами в ближайшее время.</p>
@@ -1134,17 +1146,35 @@
                     >
                         Отправить
                     </button>
-                    <a href="index.html" class="button-form pop-up__home is-hidden" data-form-home>На главную</a>
+                    <a 
+                        href="./index.html" 
+                        class="button-form pop-up__home is-hidden" 
+                        data-form-home
+                    >
+                        На главную
+                    </a>
                     <p class="pop-up__agreement" data-form-agreement>Нажимая кнопку «Отправить», вы принимаете согласие на обработку персональных данных</p>
                 </div>
             </div>
         </form>
     </div>
     
-    <div class="pop-up" id="rent-popup" data-popup>
-        <form class="number-form" action="/" data-form>
+    <div 
+        class="pop-up" 
+        id="rent-popup" 
+        data-popup
+    >
+        <form 
+            class="number-form" 
+            action="/" data-form
+        >
             <div class="pop-up__container" data-form-body>
-                <span class="pop-up__cross" aria-label="Закрыть поп-ап" data-popup-close></span>
+                <span 
+                    class="pop-up__cross" 
+                    aria-label="Закрыть поп-ап" 
+                    data-popup-close
+                >
+                </span>
                 <div class="pop-up__header" data-form-header>
                     <h2 class="pop-up__header-title">Оставьте заявку</h2>
                     <p class="pop-up__header-subtitle">Оставьте свой номер телефона и желаемую дату аренды и наши менеджеры свяжутся с Вами в ближайшее время для подтверждения аренды</p>
@@ -1190,7 +1220,13 @@
                     >
                         Отправить
                     </button>
-                    <a href="index.html" class="button-form button--green pop-up__home is-hidden" data-form-home>На главную</a>
+                    <a 
+                        href="./index.html" 
+                        class="button-form button--green pop-up__home is-hidden" 
+                        data-form-home
+                    >
+                        На главную
+                    </a>
                     <p class="pop-up__agreement" data-form-agreement>Нажимая кнопку «Отправить», вы принимаете согласие на обработку персональных данных</p>
                 </div>
             </div>

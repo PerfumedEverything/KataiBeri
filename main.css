@@ -290,6 +290,9 @@ svg * {
   }
 }
 
+html {
+  scroll-behavior: smooth;
+}
 html.is-lock {
   overflow: hidden;
 }
@@ -667,6 +670,10 @@ a {
   background-color: transparent;
   border: none;
 }
+.burger-button.is-active {
+  z-index: 100;
+  color: var(--color-accent);
+}
 .burger-button.is-active .burger-button__line:first-child {
   rotate: 45deg;
   translate: 0em 0.2em;
@@ -735,6 +742,11 @@ a {
   }
 }
 @media (width > 63.99875rem) {
+  .header__overlay-logo {
+    display: none;
+  }
+}
+@media (width > 63.99875rem) {
   .header__overlay {
     display: contents;
   }
@@ -742,20 +754,19 @@ a {
 @media (width <= 63.99875rem) {
   .header__overlay {
     position: fixed;
-    margin-top: 6.25rem;
     z-index: 90;
     inset: 0;
     display: flex;
     flex-direction: column;
     row-gap: 0.625rem;
-    padding: 1.25rem;
+    padding: 1.875rem;
     background-color: var(--color-white);
     transition-duration: var(--transition-duration);
   }
 }
 @media (width <= 63.99875rem) and (width <= 47.99875rem) {
   .header__overlay {
-    padding: 0.625rem;
+    padding: 1.875rem 1.25rem 1.25rem 1.25rem;
   }
 }
 @media (width <= 63.99875rem) {
@@ -763,16 +774,6 @@ a {
     opacity: 0;
     visibility: hidden;
     translate: 100%;
-  }
-}
-@media (width <= 47.99875rem) {
-  .header__overlay {
-    margin-top: 5.0625rem;
-  }
-}
-@media (width <= 30.06125rem) {
-  .header__overlay {
-    margin-top: 4.75rem;
   }
 }
 .header__overlay-tel {
@@ -1099,6 +1100,16 @@ a {
   text-align: center;
   padding: 5rem 0;
 }
+@media (width <= 63.99875rem) {
+  .services__title {
+    padding: 3.75rem 0;
+  }
+}
+@media (width <= 47.99875rem) {
+  .services__title {
+    padding: 2.5rem 0;
+  }
+}
 .services__item-extra {
   grid-column: span 2;
 }
@@ -1238,6 +1249,16 @@ a {
 .options__title {
   text-align: center;
   padding: 5rem 0;
+}
+@media (width <= 63.99875rem) {
+  .options__title {
+    padding: 3.75rem 0;
+  }
+}
+@media (width <= 47.99875rem) {
+  .options__title {
+    padding: 2.5rem 0;
+  }
 }
 .options__body {
   display: flex;
@@ -1518,16 +1539,21 @@ a {
 
 .reviews {
   margin-top: 5rem;
-  scroll-margin-top: 9.375rem;
+  scroll-margin-top: 15.625rem;
 }
 .reviews__title {
   text-align: center;
-  padding: 2.5rem;
+  padding: 2.5rem 0;
+}
+@media (width <= 63.99875rem) {
+  .reviews__title {
+    padding: 1.875rem 0;
+  }
 }
 .reviews__slider {
   position: relative;
   overflow: hidden;
-  padding: 1.875rem;
+  padding-inline: 1.875rem;
 }
 .reviews__slider-list {
   display: flex;
@@ -1588,6 +1614,16 @@ a {
 .map__title {
   text-align: center;
   margin: 5rem 0;
+}
+@media (width <= 63.99875rem) {
+  .map__title {
+    margin: 3.75rem 0;
+  }
+}
+@media (width <= 47.99875rem) {
+  .map__title {
+    margin: 1.875rem 0;
+  }
 }
 .map__body {
   display: flex;
@@ -1760,6 +1796,16 @@ a {
   text-align: center;
   margin: 5rem 0;
 }
+@media (width <= 63.99875rem) {
+  .filters__title {
+    margin: 3.75rem 0;
+  }
+}
+@media (width <= 47.99875rem) {
+  .filters__title {
+    margin: 2.5rem 0;
+  }
+}
 .filters__body {
   position: relative;
   display: flex;
@@ -1777,6 +1823,11 @@ a {
   flex-direction: column;
   flex: 1;
   row-gap: 0.75rem;
+}
+@media (width > 63.99875rem) {
+  .filters__panel {
+    pointer-events: none;
+  }
 }
 @media (width <= 63.99875rem) {
   .filters__panel {
@@ -1966,6 +2017,16 @@ a {
 .alt-about__main-title {
   text-align: center;
   margin: 5rem 0;
+}
+@media (width <= 63.99875rem) {
+  .alt-about__main-title {
+    margin: 3.75rem 0;
+  }
+}
+@media (width <= 47.99875rem) {
+  .alt-about__main-title {
+    margin: 2.5rem 0;
+  }
 }
 .alt-about__item {
   display: flex;

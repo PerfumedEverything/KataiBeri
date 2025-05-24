@@ -2,17 +2,21 @@
 
 .reviews {
     margin-top: rem(80);
-    scroll-margin-top: rem(150);
+    scroll-margin-top: rem(250);
 
     &__title {
         text-align: center;
-        padding: rem(40)
+        padding: rem(40) 0;
+
+        @include tablet {
+            padding: rem(30) 0;
+        }
     }
 
     &__slider {
         position: relative;
         overflow: hidden;
-        padding: rem(30);
+        padding-inline: rem(30);
 
         &-list {
             display: flex;
