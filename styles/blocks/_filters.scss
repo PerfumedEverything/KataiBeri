@@ -47,6 +47,14 @@
             justify-content: space-between;
             padding: rem(34) rem(30);
 
+            @include tablet {
+                padding: rem(30)
+            }
+
+            @include mobile {
+                padding: rem(20) rem(30);
+            }
+
             &-title {
                 @include fluid-text(28, 20);
             }

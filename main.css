@@ -1852,6 +1852,16 @@ a {
   justify-content: space-between;
   padding: 2.125rem 1.875rem;
 }
+@media (width <= 63.99875rem) {
+  .filters__panel-header {
+    padding: 1.875rem;
+  }
+}
+@media (width <= 47.99875rem) {
+  .filters__panel-header {
+    padding: 1.25rem 1.875rem;
+  }
+}
 .filters__panel-header-title {
   font-size: clamp(1.25rem, 1.15rem + 0.5vw, 1.75rem);
 }
