@@ -8,22 +8,36 @@ import DateInput from './scripts/DateInput.js';
 
 function initSliders() {
     const optionsSlider = document.querySelector('[data-js-options-slider]');
-    if (!optionsSlider) {
-        console.error('Options slider element not found');
-    } else {
+    if (optionsSlider) {
         new Slider(optionsSlider, true);
+    } else {
+        console.warn('Элемент слайдера опций не найден');
     }
 
     const reviewsSlider = document.querySelector('[data-js-reviews-slider]');
-    if (!reviewsSlider) {
-        console.error('Reviews slider element not found');
-    } else {
+    if (reviewsSlider) {
         new Slider(reviewsSlider, false);
+    } else {
+        console.warn('Элемент слайдера отзывов не найден');
     }
+}
+
+function initAccordion() {
+    document.querySelectorAll('.questions__accordion').forEach(details => {
+        details.addEventListener('toggle', () => {
+            const item = details.closest('.questions__item');
+            if (details.open) {
+                item.setAttribute('is-open', '');
+            } else {
+                item.removeAttribute('is-open');
+            }
+        });
+    });
 }
 
 document.addEventListener('DOMContentLoaded', () => {
     initSliders();
+    initAccordion();
 
     if (document.querySelector('[data-js-header]')) new Header();
     if (document.querySelector('[data-js-filters]')) new Filters();
@@ -32,8 +46,3 @@ document.addEventListener('DOMContentLoaded', () => {
     new Map();
     if (document.querySelector('.pop-up__input--date')) new DateInput();
 });
-
-// Проверка для динамической загрузки
-setTimeout(() => {
-    initSliders();
-}, 5000);

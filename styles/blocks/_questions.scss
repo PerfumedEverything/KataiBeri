@@ -51,15 +51,29 @@
                 background: url(./icons/indicator-arrow-down-hover.svg);
             }
         }
+
+        &[is-open] {
+            background-color: var(--color-accent);
+
+            .questions__accordion-title,
+            .questions__accordion-text {
+                color: var(--color-white);
+            }
+
+            .questions__accordion-indicator::before {
+                background: url(./icons/indicator-arrow-open.svg);
+            }
+        }
     }
 
     &__accordion {
 
         &[open] {
-            .questions__accordion-indicator::before {
-                background: url(./icons/indicator-arrow-open.svg);
+            .questions__accordion-body {
+                margin-top: rem(25);
             }
         }
+
         &-header {
             display: flex;
             align-items: center;
