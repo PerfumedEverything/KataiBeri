@@ -34,10 +34,16 @@ function initAccordion() {
     });
 }
 
+let isScrolling = false; 
+
 function smoothScrollTo(element) {
+    if (isScrolling) return; 
+    isScrolling = true;
+
     const start = window.scrollY;
-    const target = element.getBoundingClientRect().top + start;
-    const duration = 600; // Длительность анимации в мс
+    const headerHeight = document.querySelector('.header')?.offsetHeight || 0; 
+    const targetPosition = element.getBoundingClientRect().top + start - headerHeight;
+    const duration = 600; 
     let startTime = null;
 
     function animation(currentTime) {
@@ -46,10 +52,12 @@ function smoothScrollTo(element) {
         const easeInOutQuad = progress < 0.5
             ? 2 * progress * progress
             : 1 - Math.pow(-2 * progress + 2, 2) / 2;
-        window.scrollTo(0, start + (target - start) * easeInOutQuad);
+        window.scrollTo(0, start + (targetPosition - start) * easeInOutQuad);
 
         if (progress < 1) {
             requestAnimationFrame(animation);
+        } else {
+            isScrolling = false;
         }
     }
 
@@ -72,18 +80,17 @@ function initSmoothScroll() {
                 } else {
                     console.warn(`Элемент с id="${hash}" не найден`);
                 }
-            }
-            else if (hash && path !== currentPath) {
+            } else if (hash && path !== currentPath) {
                 window.location.href = href;
             }
         });
     });
 
     const initialHash = window.location.hash.substring(1);
-    if (initialHash) {
+    if (initialHash && !window.location.hash.includes('no-scroll')) {
         const target = document.getElementById(initialHash);
         if (target) {
-            setTimeout(() => smoothScrollTo(target), 100); 
+            setTimeout(() => smoothScrollTo(target), 100);
         }
     }
 }
