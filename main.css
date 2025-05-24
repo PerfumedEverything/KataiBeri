@@ -315,6 +315,7 @@ main {
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
+    color: var(--color-dark) !important;
   }
   select input:-webkit-autofill,
   select select:-webkit-autofill {
