@@ -1,6 +1,7 @@
 @use '../helpers' as *;
 
 .filters {
+    
     &__title {
         text-align: center;
         margin: rem(80) 0;
@@ -110,7 +111,7 @@
                 left: 0;
                 width: 100%;
                 height: fit-content;
-                z-index: 1000;
+                z-index: 50;
                 background-color: var(--color-gray);
 
                 &.is-active {

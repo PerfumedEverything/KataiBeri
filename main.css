@@ -310,6 +310,18 @@ main {
   flex-grow: 1;
 }
 
+@media (width <= 47.99875rem) {
+  select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+  }
+  select input:-webkit-autofill,
+  select select:-webkit-autofill {
+    -webkit-text-fill-color: var(--color-dark) !important;
+  }
+}
+
 h1, .h1,
 h2, .h2,
 h3, .h3 {
@@ -462,7 +474,7 @@ a {
 }
 .button-filters.active {
   background-color: var(--color-location-tag);
-  color: var(--color-dark);
+  color: var(--color-dark) !important;
 }
 .button-filters.active .button-filters__cross {
   display: block;
@@ -1896,7 +1908,7 @@ a {
     left: 0;
     width: 100%;
     height: fit-content;
-    z-index: 1000;
+    z-index: 50;
     background-color: var(--color-gray);
   }
   .filters__panel-overlay.is-active {

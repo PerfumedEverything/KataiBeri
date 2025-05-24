@@ -2,7 +2,7 @@
 
 html {
     scroll-behavior: smooth;
-    
+
     &.is-lock {
         overflow: hidden;
     }
@@ -20,6 +20,19 @@ body {
 
 main {
     flex-grow: 1;
+}
+
+select {
+    @include mobile {  
+        -webkit-appearance: none; 
+        -moz-appearance: none;
+        appearance: none;
+
+        input:-webkit-autofill,
+        select:-webkit-autofill {
+            -webkit-text-fill-color: var(--color-dark) !important;
+        }
+    }
 }
 
 h1, .h1,
