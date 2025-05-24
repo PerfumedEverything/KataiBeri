@@ -728,7 +728,7 @@ a {
   align-items: center;
   column-gap: 4.5rem;
   padding: 1.25rem;
-  border-radius: 2.5rem;
+  border-radius: 1.875rem;
   background-color: var(--color-accent);
 }
 @media (width <= 63.99875rem) {
