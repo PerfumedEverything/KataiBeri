@@ -13,6 +13,8 @@
         border-radius: rem(55);
 
         @include mobile {
+            min-height: fit-content;
+            row-gap: rem(30);
             padding: rem(30);
         }
     }

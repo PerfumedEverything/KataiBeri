@@ -1473,6 +1473,8 @@ a {
 }
 @media (width <= 47.99875rem) {
   .form__body {
+    min-height: fit-content;
+    row-gap: 1.875rem;
     padding: 1.875rem;
   }
 }
