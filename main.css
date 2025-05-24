@@ -291,7 +291,7 @@ svg * {
 }
 
 html {
-  scroll-behavior: smooth;
+  will-change: scroll-position;
 }
 html.is-lock {
   overflow: hidden;

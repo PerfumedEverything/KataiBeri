@@ -1,7 +1,7 @@
 @use 'helpers' as *;
 
-html {
-    scroll-behavior: smooth;
+html { 
+    will-change: scroll-position;
 
     &.is-lock {
         overflow: hidden;
