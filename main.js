@@ -76,7 +76,7 @@ function initSmoothScroll() {
                 const target = document.getElementById(hash);
                 if (target) {
                     smoothScrollTo(target);
-                    window.history.pushState(null, null, `#${hash}`);
+                    window.history.pushState(null, null, `#${hash}${window.location.hash.includes('no-scroll') ? '' : '?no-scroll'}`);
                 } else {
                     console.warn(`Элемент с id="${hash}" не найден`);
                 }
@@ -88,7 +88,7 @@ function initSmoothScroll() {
 
     const initialHash = window.location.hash.substring(1);
     if (initialHash && !window.location.hash.includes('no-scroll')) {
-        const target = document.getElementById(initialHash);
+        const target = document.getElementById(initialHash.split('?')[0]);
         if (target) {
             setTimeout(() => smoothScrollTo(target), 100);
         }
