@@ -64,6 +64,13 @@
     max-width: fit-content;
     line-height: 114%;
 
+    @include mobile {
+        -webkit-appearance: none; 
+        -moz-appearance: none;
+        appearance: none;
+        color: var(--color-dark) !important;
+    }
+
     @include hover {
         scale: .95;
     }

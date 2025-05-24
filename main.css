@@ -463,6 +463,14 @@ a {
   max-width: fit-content;
   line-height: 114%;
 }
+@media (width <= 47.99875rem) {
+  .button-filters {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    color: var(--color-dark) !important;
+  }
+}
 @media (any-hover: hover) {
   .button-filters:hover {
     scale: 0.95;
