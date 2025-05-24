@@ -57,12 +57,14 @@
     justify-content: space-between;
     align-items: center;
     column-gap: rem(10);
-
     border-radius: rem(8);
     padding: rem(12);
     background-color: var(--color-gray);
     max-width: fit-content;
     line-height: 114%;
+    color: var(--color-dark) !important;
+    -webkit-text-fill-color: var(--color-dark) !important; 
+    -webkit-appearance: none !important; 
 
     @include mobile {
         -webkit-appearance: none; 
@@ -163,6 +165,9 @@
     border-radius: rem(1000);
     padding: rem(26) 0;
     background-color: var(--color-white);
+    color: var(--color-accent) !important;
+    -webkit-text-fill-color: var(--color-accent) !important; 
+    -webkit-appearance: none !important; 
 
     @include hover {
         scale: .95;

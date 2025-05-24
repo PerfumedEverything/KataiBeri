@@ -462,6 +462,9 @@ a {
   background-color: var(--color-gray);
   max-width: fit-content;
   line-height: 114%;
+  color: var(--color-dark) !important;
+  -webkit-text-fill-color: var(--color-dark) !important;
+  -webkit-appearance: none !important;
 }
 @media (width <= 47.99875rem) {
   .button-filters {
@@ -562,6 +565,9 @@ a {
   border-radius: 62.5rem;
   padding: 1.625rem 0;
   background-color: var(--color-white);
+  color: var(--color-accent) !important;
+  -webkit-text-fill-color: var(--color-accent) !important;
+  -webkit-appearance: none !important;
 }
 @media (any-hover: hover) {
   .filters__reset-button:hover {
@@ -1919,6 +1925,7 @@ a {
   display: flex;
   flex-direction: column;
   row-gap: 0.75rem;
+  color: var(--color-dark) !important;
 }
 @media (width <= 63.99875rem) {
   .filters__panel-overlay {
