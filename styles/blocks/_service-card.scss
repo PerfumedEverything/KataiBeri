@@ -31,7 +31,7 @@
         transform: scale(.98);
     }
 
-    @include tablet {
+    @include laptop {
         min-height: rem(350);
     }
 

@@ -1258,7 +1258,7 @@ a {
     transform: scale(0.98);
   }
 }
-@media (width <= 63.99875rem) {
+@media (width <= 90.06125rem) {
   .service-card {
     min-height: 21.875rem;
   }
@@ -1348,11 +1348,6 @@ a {
 .options__show-all {
   justify-content: center;
   padding: 2.5rem 0;
-}
-@media (width > 63.99875rem) {
-  .options__show-all {
-    margin-top: 2.5rem;
-  }
 }
 @media (width <= 47.99875rem) {
   .options__show-all {
