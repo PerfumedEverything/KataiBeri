@@ -1040,7 +1040,7 @@ a {
   margin: 0.875rem 0 0.875rem;
   padding: 2.5rem;
   border-radius: 3.4375rem;
-  background: url(./images/hero-image.png) 90%/cover no-repeat;
+  background: url(./images/hero-image.webp) 90%/cover no-repeat;
   overflow: hidden;
 }
 @media (width <= 47.99875rem) {
