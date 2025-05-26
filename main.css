@@ -213,9 +213,9 @@ svg * {
   --container-padding-x: 1rem;
   --transition-duration: .2s;
 }
-@media (width <= 93.81125rem) {
+@media (width <= 100.06125rem) {
   :root {
-    --container-width: 61.5625rem;
+    --container-width: 56.25rem;
   }
 }
 
@@ -909,7 +909,7 @@ a {
   width: 3.125rem;
   height: 3.125rem;
 }
-@media (width <= 93.81125rem) {
+@media (width <= 100.06125rem) {
   .footer__socials {
     padding: 2.5rem 2.5rem 7.5rem 1rem;
   }
@@ -932,7 +932,7 @@ a {
   color: var(--color-accent);
   font-weight: 400;
 }
-@media (width <= 93.81125rem) {
+@media (width <= 100.06125rem) {
   .footer__advice {
     padding: 2.5rem 2.5rem 7.5rem 2.875rem;
   }
@@ -1258,7 +1258,7 @@ a {
     transform: scale(0.98);
   }
 }
-@media (width <= 93.81125rem) {
+@media (width <= 100.06125rem) {
   .service-card {
     min-height: 21.875rem;
   }
@@ -1422,7 +1422,7 @@ a {
   border-radius: 3.4375rem;
   row-gap: 2.5rem;
 }
-@media (width > 93.81125rem) {
+@media (width > 100.06125rem) {
   .about__item {
     min-height: 28.125rem;
   }
@@ -1495,6 +1495,7 @@ a {
   font-size: clamp(1rem, 0.95rem + 0.25vw, 1.25rem);
   max-width: 22.5rem;
   color: var(--color-white);
+  line-height: 1.4;
 }
 .form__main {
   display: flex;
@@ -2081,7 +2082,7 @@ a {
   border-radius: 3.4375rem;
   row-gap: 2.5rem;
 }
-@media (width > 93.81125rem) {
+@media (width > 100.06125rem) {
   .alt-about__item {
     min-height: 28.125rem;
   }
