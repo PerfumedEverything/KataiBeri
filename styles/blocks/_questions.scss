@@ -40,20 +40,22 @@
         background-color: var(--color-gray);
         transition: var(--transition-duration);
 
-        @include mobile {
-            padding: rem(15) rem(30);
+        @include tablet-above {          
+            @include hover {
+                background-color: var(--color-accent);
+    
+                .questions__accordion-title,
+                .questions__accordion-text {
+                    color: var(--color-white);
+                }
+                .questions__accordion-indicator::before {
+                    background: url(./icons/indicator-arrow-down-hover.svg);
+                }
+            }
         }
 
-        @include hover {
-            background-color: var(--color-accent);
-
-            .questions__accordion-title,
-            .questions__accordion-text {
-                color: var(--color-white);
-            }
-            .questions__accordion-indicator::before {
-                background: url(./icons/indicator-arrow-down-hover.svg);
-            }
+        @include mobile {
+            padding: rem(15) rem(30);
         }
 
         &[is-open] {
@@ -74,7 +76,7 @@
 
         &[open] {
             .questions__accordion-body {
-                margin-top: rem(25);
+                margin: rem(10) 0;
             }
         }
 
