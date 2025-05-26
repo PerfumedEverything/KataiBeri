@@ -26,15 +26,13 @@ function initAccordion() {
         details.addEventListener('toggle', () => {
             const item = details.closest('.questions__item');
             if (details.open) {
-                item.setAttribute('has-open', '');
+                item.setAttribute('is-open', '');
             } else {
-                item.removeAttribute('has-open');
+                item.removeAttribute('is-open');
             }
         });
     });
 }
-
-
 
 document.addEventListener('DOMContentLoaded', () => {
     initSliders();
