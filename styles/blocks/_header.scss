@@ -14,7 +14,7 @@
         border-radius: rem(30);
         background-color: var(--color-accent);
 
-        @include tablet {
+        @include laptop {
             column-gap: rem(30);
         }
 
