@@ -16,6 +16,11 @@ body {
     font-family: var(--font-family-base);
     color: var(--color-dark);
     background-color: var(--color-gray-bg);
+
+    @include tablet-above {
+        zoom: 0.85;
+        overflow-x: hidden;
+    }
 }
 
 main {

@@ -30,6 +30,6 @@
     --transition-duration: .2s;
 
     @include laptop {
-        --container-width: #{rem(900)};
+        --container-width: #{rem(985)};
     }
 }

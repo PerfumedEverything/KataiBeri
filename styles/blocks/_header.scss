@@ -14,7 +14,7 @@
         border-radius: rem(30);
         background-color: var(--color-accent);
 
-        @include laptop {
+        @include tablet {
             column-gap: rem(30);
         }
 
@@ -29,6 +29,10 @@
         background-color: var(--color-map-link);
         border-radius: rem(51);
         column-gap: rem(11);
+
+        @include laptop {
+            padding: rem(15) rem(25) ;
+        }
         
         @include tablet {
             padding: rem(15) rem(25);

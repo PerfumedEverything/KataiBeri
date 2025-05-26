@@ -1,5 +1,5 @@
 @use '../helpers' as *;
 
 .logo {
-    min-width: fluid(192, 126);
+    max-width: fluid(192, 126);
 }

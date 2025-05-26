@@ -34,71 +34,11 @@ function initAccordion() {
     });
 }
 
-let isScrolling = false; 
 
-function smoothScrollTo(element) {
-    if (isScrolling) return; 
-    isScrolling = true;
-
-    const start = window.scrollY;
-    const headerHeight = document.querySelector('.header')?.offsetHeight || 0; 
-    const targetPosition = element.getBoundingClientRect().top + start - headerHeight;
-    const duration = 600; 
-    let startTime = null;
-
-    function animation(currentTime) {
-        if (!startTime) startTime = currentTime;
-        const progress = Math.min((currentTime - startTime) / duration, 1);
-        const easeInOutQuad = progress < 0.5
-            ? 2 * progress * progress
-            : 1 - Math.pow(-2 * progress + 2, 2) / 2;
-        window.scrollTo(0, start + (targetPosition - start) * easeInOutQuad);
-
-        if (progress < 1) {
-            requestAnimationFrame(animation);
-        } else {
-            isScrolling = false;
-        }
-    }
-
-    requestAnimationFrame(animation);
-}
-
-function initSmoothScroll() {
-    document.querySelectorAll('a[href*="#"]').forEach(anchor => {
-        anchor.addEventListener('click', (event) => {
-            const href = anchor.getAttribute('href');
-            const [path, hash] = href.split('#');
-            const currentPath = window.location.pathname;
-
-            if (hash && (path === '' || path === currentPath || path === '/')) {
-                event.preventDefault();
-                const target = document.getElementById(hash);
-                if (target) {
-                    smoothScrollTo(target);
-                    window.history.pushState(null, null, `#${hash}${window.location.hash.includes('no-scroll') ? '' : '?no-scroll'}`);
-                } else {
-                    console.warn(`Элемент с id="${hash}" не найден`);
-                }
-            } else if (hash && path !== currentPath) {
-                window.location.href = href;
-            }
-        });
-    });
-
-    const initialHash = window.location.hash.substring(1);
-    if (initialHash && !window.location.hash.includes('no-scroll')) {
-        const target = document.getElementById(initialHash.split('?')[0]);
-        if (target) {
-            setTimeout(() => smoothScrollTo(target), 100);
-        }
-    }
-}
 
 document.addEventListener('DOMContentLoaded', () => {
     initSliders();
     initAccordion();
-    initSmoothScroll();
 
     if (document.querySelector('[data-js-header]')) new Header();
 
