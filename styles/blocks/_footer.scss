@@ -1,21 +1,18 @@
 @use '../helpers' as *;
 
 .footer {
-    margin-top: rem(80);
+    margin-top: rem(60);
     margin-bottom: rem(90);
 
     @include tablet {
+        margin-top: rem(40);
         margin-bottom: rem(64);
     }
 
     &__inner {
         display: grid;
         grid-template-columns: 1fr 1fr;
-        gap: rem(20);
-
-        @include tablet {
-            gap: rem(15);
-        }
+        gap: rem(15);
 
         @include mobile {
             display: flex;
@@ -28,7 +25,8 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
-        padding: rem(40) rem(40) rem(140) rem(16);
+        height: rem(160);
+        padding: rem(40) rem(40) rem(70) rem(16);
 
         &-list {
             display: flex;
@@ -41,7 +39,6 @@
 
         @include laptop {
             padding: rem(40) rem(40) rem(120) rem(16);
-
         }
 
         @include tablet {
@@ -52,14 +49,16 @@
         }
 
         @include mobile {
-            gap: rem(60);
+            gap: rem(30);
         }
     }
 
     &__advice {
-        padding: rem(40) rem(40) rem(150);
+        padding: rem(40) rem(40) rem(120);
         color: var(--color-accent);
         font-weight: 400;
+        height: rem(160);
+
 
         @include laptop {
             padding: rem(40) rem(40) rem(120) rem(46);

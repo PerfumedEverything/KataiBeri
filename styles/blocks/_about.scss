@@ -2,23 +2,23 @@
 
 .about {
     &__list {
-        margin-top: rem(116);
+        margin-top: rem(60);
 
         @include tablet {
-            margin-top: rem(60);
+            margin-top: rem(40);
         }
     }
 
     &__item {
         display: flex;
         flex-direction: column;
-        min-height: rem(280);
+        min-height: rem(220);
         padding: rem(40);
         border-radius: rem(55);
         row-gap: rem(40);
 
         @include laptop-above {
-            min-height: rem(450);
+            min-height: rem(400);
         }
 
         @include mobile {
