@@ -1,11 +1,11 @@
 @use '../helpers' as *;
 
 .reviews {
-    margin-top: rem(60);
+    margin-top: rem(40);
     scroll-margin-top: rem(250);
 
     @include tablet {
-        margin-top: rem(40);
+        margin-top: rem(30);
     }
 
     &__title {

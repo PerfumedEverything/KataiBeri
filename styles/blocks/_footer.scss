@@ -1,12 +1,12 @@
 @use '../helpers' as *;
 
 .footer {
-    margin-top: rem(60);
+    margin-top: rem(40);
     margin-bottom: rem(90);
 
     @include tablet {
-        margin-top: rem(40);
-        margin-bottom: rem(64);
+        margin-top: rem(30);
+        margin-bottom: rem(60);
     }
 
     &__inner {

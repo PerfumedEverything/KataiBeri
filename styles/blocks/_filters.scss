@@ -4,14 +4,10 @@
     
     &__title {
         text-align: center;
-        margin: rem(80) 0;
-
-        @include tablet {
-            margin: rem(60) 0;
-        }
+        margin: rem(40) 0;
 
         @include mobile {
-            margin: rem(40) 0;
+            margin: rem(30) 0;
         }
     }
 

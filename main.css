@@ -886,13 +886,13 @@ a {
 }
 
 .footer {
-  margin-top: 3.75rem;
+  margin-top: 2.5rem;
   margin-bottom: 5.625rem;
 }
 @media (width <= 63.99875rem) {
   .footer {
-    margin-top: 2.5rem;
-    margin-bottom: 4rem;
+    margin-top: 1.875rem;
+    margin-bottom: 3.75rem;
   }
 }
 .footer__inner {
@@ -1411,11 +1411,11 @@ a {
 }
 
 .about__list {
-  margin-top: 3.75rem;
+  margin-top: 2.5rem;
 }
 @media (width <= 63.99875rem) {
   .about__list {
-    margin-top: 2.5rem;
+    margin-top: 1.875rem;
   }
 }
 .about__item {
@@ -1571,12 +1571,12 @@ a {
 }
 
 .reviews {
-  margin-top: 3.75rem;
+  margin-top: 2.5rem;
   scroll-margin-top: 15.625rem;
 }
 @media (width <= 63.99875rem) {
   .reviews {
-    margin-top: 2.5rem;
+    margin-top: 1.875rem;
   }
 }
 .reviews__title {
@@ -1651,7 +1651,7 @@ a {
 }
 .map__title {
   text-align: center;
-  margin: 3.75rem 0;
+  margin: 2.5rem 0;
 }
 @media (width <= 47.99875rem) {
   .map__title {
@@ -1730,12 +1730,12 @@ a {
 }
 
 .questions__body {
-  margin-top: 3.75rem;
+  margin-top: 2.5rem;
   padding: 2.5rem;
 }
 @media (width <= 63.99875rem) {
   .questions__body {
-    margin-top: 2.5rem;
+    margin-top: 1.875rem;
     padding: 1.875rem;
   }
 }
@@ -1842,16 +1842,11 @@ a {
 
 .filters__title {
   text-align: center;
-  margin: 5rem 0;
-}
-@media (width <= 63.99875rem) {
-  .filters__title {
-    margin: 3.75rem 0;
-  }
+  margin: 2.5rem 0;
 }
 @media (width <= 47.99875rem) {
   .filters__title {
-    margin: 2.5rem 0;
+    margin: 1.875rem 0;
   }
 }
 .filters__body {
@@ -2085,16 +2080,16 @@ a {
 
 .alt-about__main-title {
   text-align: center;
-  margin: 5rem 0;
+  margin: 2.5rem 0;
 }
 @media (width <= 63.99875rem) {
   .alt-about__main-title {
-    margin: 3.75rem 0;
+    margin: 1.875rem 0;
   }
 }
 @media (width <= 47.99875rem) {
   .alt-about__main-title {
-    margin: 2.5rem 0;
+    margin: 1.25rem 0;
   }
 }
 .alt-about__item {
@@ -2107,7 +2102,7 @@ a {
 }
 @media (width > 92.56125rem) {
   .alt-about__item {
-    min-height: 28.125rem;
+    height: 25rem;
   }
 }
 @media (width <= 47.99875rem) {
@@ -2119,8 +2114,17 @@ a {
   font-size: clamp(1rem, 0.95rem + 0.25vw, 1.25rem);
 }
 .alt-about__item[data-bg=main] {
+  position: relative;
   grid-column: span 2;
   background: url(./images/alt-about-bg-main.png) 100%/cover no-repeat;
+}
+.alt-about__item[data-bg=main] p {
+  max-width: 35.625rem;
+}
+@media (width <= 92.56125rem) {
+  .alt-about__item[data-bg=main] p:nth-child(4) {
+    max-width: 25rem;
+  }
 }
 @media (width <= 63.99875rem) {
   .alt-about__item[data-bg=main] p {
@@ -2134,12 +2138,24 @@ a {
   color: var(--color-accent);
 }
 .alt-about__item-button {
-  align-self: end;
   max-width: fit-content;
-  margin-top: auto;
   padding: 1.25rem 1.875rem;
   gap: 0.4375rem;
   line-height: 0.95;
+}
+.alt-about__item-button-more {
+  position: absolute;
+  max-width: fit-content;
+  padding: 1.25rem 1.875rem;
+  line-height: 0.95;
+  bottom: 2.5rem;
+  right: 2.5rem;
+}
+@media (width <= 47.99875rem) {
+  .alt-about__item-button-more {
+    bottom: 1.875rem;
+    right: 1.875rem;
+  }
 }
 .alt-about__paragraph {
   display: flex;
