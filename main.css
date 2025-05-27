@@ -1139,11 +1139,11 @@ a {
 
 .services__title {
   text-align: center;
-  padding: 3.75rem 0;
+  padding: 2.5rem 0;
 }
 @media (width <= 47.99875rem) {
   .services__title {
-    padding: 2.5rem 0;
+    padding: 1.875rem 0;
   }
 }
 .services__item-extra {
