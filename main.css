@@ -1459,11 +1459,11 @@ a {
 }
 
 .form {
-  margin-top: 3.75rem;
+  margin-top: 2.5rem;
 }
 @media (width <= 63.99875rem) {
   .form {
-    margin-top: 2.5rem;
+    margin-top: 1.875rem;
   }
 }
 .form__body {
