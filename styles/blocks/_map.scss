@@ -3,6 +3,10 @@
 .map {
     scroll-margin-top: rem(250);
 
+    @include mobile {
+        scroll-margin-top: rem(100);
+    }
+
     &__title {
         text-align: center;
         margin: rem(40) 0;

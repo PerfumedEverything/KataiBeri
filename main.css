@@ -1617,6 +1617,11 @@ a {
     margin-top: 1.875rem;
   }
 }
+@media (width <= 47.99875rem) {
+  .reviews {
+    scroll-margin-top: 6.25rem;
+  }
+}
 .reviews__title {
   text-align: center;
   padding: 2.5rem 0;
@@ -1687,6 +1692,11 @@ a {
 
 .map {
   scroll-margin-top: 15.625rem;
+}
+@media (width <= 47.99875rem) {
+  .map {
+    scroll-margin-top: 6.25rem;
+  }
 }
 .map__title {
   text-align: center;

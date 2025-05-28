@@ -8,6 +8,10 @@
         margin-top: rem(30);
     }
 
+    @include mobile {
+        scroll-margin-top: rem(100);
+    }
+
     &__title {
         text-align: center;
         padding: rem(40) 0;
