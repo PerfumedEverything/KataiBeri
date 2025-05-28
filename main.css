@@ -2173,6 +2173,7 @@ a {
   position: relative;
   grid-column: span 2;
   background: url(./images/alt-about-bg-main.png) 100%/cover no-repeat;
+  gap: 2.375rem;
 }
 .alt-about__item[data-bg=main] p {
   max-width: 35.625rem;

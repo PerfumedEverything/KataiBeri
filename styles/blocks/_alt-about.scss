@@ -42,6 +42,7 @@
             position: relative;
             grid-column: span 2;
             background: url(./images/alt-about-bg-main.png) 100%/cover no-repeat;
+            gap: rem(38);
 
             & p {
                 max-width: rem(570);
