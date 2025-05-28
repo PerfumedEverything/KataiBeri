@@ -22,11 +22,11 @@ class Slider {
     updateVisibleItems() {
         const windowWidth = window.innerWidth;
         if (windowWidth > 1024) {
-            this.visibleItems = 3; // 3 видимых элемента на десктопе
+            this.visibleItems = 3;
         } else if (windowWidth <= 1024 && windowWidth > 780) {
-            this.visibleItems = 2; // 2 видимых элемента на планшетах
+            this.visibleItems = 2;
         } else {
-            this.visibleItems = 1; // 1 видимый элемент на мобильных
+            this.visibleItems = 1;
         }
     }
 
@@ -39,18 +39,17 @@ class Slider {
             this.startAutoScroll();
         }
 
-        // Обработчик для скролла колёсиком (включая вертикальный скролл)
         this.list.addEventListener('wheel', (e) => {
             e.preventDefault();
+
             if (this.isScrolling) return;
             this.isScrolling = true;
 
-            // Учитываем как горизонтальный, так и вертикальный скролл
             const direction = e.deltaX > 0 || e.deltaY > 0 ? 'next' : 'prev';
             this.slide(direction);
 
-            setTimeout(() => (this.isScrolling = false), 300);
-        });
+            setTimeout(() => (this.isScrolling = false), 250);
+        }, { passive: false });
 
         this.list.addEventListener('touchstart', (e) => {
             this.touchStartX = e.touches[0].clientX;
@@ -72,7 +71,7 @@ class Slider {
             setTimeout(() => {
                 this.isScrolling = false;
                 if (this.autoScroll) this.startAutoScroll();
-            }, 300);
+            }, 250);
         });
 
         window.addEventListener('resize', () => {
@@ -108,10 +107,7 @@ class Slider {
     createPagination() {
         this.pagination.innerHTML = '';
         const maxIndex = Math.max(0, this.items.length - this.visibleItems);
-        // Проверяем корректность maxIndex
-        console.log(`Items: ${this.items.length}, Visible: ${this.visibleItems}, Max Index: ${maxIndex}`);
-        
-        for (let i = 0; i <= maxIndex; i++) {
+        for (let i = 0; i <= maxIndex; i++) { 
             const dot = document.createElement('button');
             dot.classList.add('reviews__slider-pagination-dot');
             dot.setAttribute('aria-label', `Slide ${i + 1}`);
