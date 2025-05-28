@@ -222,6 +222,8 @@ svg * {
 .container {
   max-width: calc(var(--container-width) + var(--container-padding-x) * 2);
   margin-inline: auto;
+  overflow-wrap: break-word;
+  word-break: break-word;
 }
 @media (width <= 63.99875rem) {
   .container {
@@ -304,11 +306,12 @@ body {
   font-family: var(--font-family-base);
   color: var(--color-dark);
   background-color: var(--color-gray-bg);
+  overflow-x: hidden;
+  -webkit-text-size-adjust: 100%;
 }
 @media (width > 63.99875rem) {
   body {
     zoom: 0.85;
-    overflow-x: hidden;
   }
 }
 
@@ -334,6 +337,8 @@ h2, .h2,
 h3, .h3 {
   color: var(--color-accent);
   font-weight: 500;
+  overflow-wrap: break-word;
+  word-break: break-word;
 }
 
 h1, .h1 {

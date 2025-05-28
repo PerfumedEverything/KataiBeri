@@ -3,6 +3,8 @@
 .container {
     max-width: calc(var(--container-width) + var(--container-padding-x) * 2);
     margin-inline: auto;
+    overflow-wrap: break-word; 
+    word-break: break-word;
 
     @include tablet {
         margin-inline: rem(20);
