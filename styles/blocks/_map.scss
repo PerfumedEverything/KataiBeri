@@ -1,7 +1,7 @@
 @use '../helpers' as *;
 
 .map {
-    scroll-margin-top: rem(170);
+    scroll-margin-top: rem(250);
 
     &__title {
         text-align: center;
@@ -84,5 +84,13 @@
         flex: 2;
         height: rem(628); 
         overflow: hidden;
+
+        @include tablet {
+            height: rem(500);
+        }
+
+        @include mobile {
+            flex: none;
+        }
     }
 }

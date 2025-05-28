@@ -1,83 +1,58 @@
 class Slider {
-    constructor(root, isOptionsSlider = false) {
+    constructor(root, isOptionsSlider = false, autoScroll = false) {
         this.root = root;
-        if (!this.root) {
-            console.error('Slider root element not found');
-            return;
-        }
+        if (!this.root) return;
 
         this.list = this.root.querySelector(isOptionsSlider ? '[data-js-options-slider-list]' : '[data-js-reviews-slider-list]');
         this.pagination = this.root.querySelector(isOptionsSlider ? '[data-js-options-slider-pagination]' : '[data-js-reviews-slider-pagination]');
-        this.isOptionsSlider = isOptionsSlider;
+        this.items = [...this.list.querySelectorAll(isOptionsSlider ? '[data-js-options-slider-item]' : '[data-js-reviews-slider-item]')];
+        if (!this.list || !this.pagination || !this.items.length) return;
+
         this.currentIndex = 0;
-        this.itemWidth = 0;
-        this.visibleItems = 1;
-        this.gap = 0;
+        this.itemWidth = this.items[0].offsetWidth;
+        this.gap = parseInt(getComputedStyle(this.list).gap) || 20;
+        this.itemWidthWithGap = this.itemWidth + this.gap;
+        this.updateVisibleItems();
         this.isScrolling = false;
-
-        if (!this.list) {
-            console.error('Slider list not found in:', root);
-            return;
-        }
-        if (!this.pagination) {
-            console.error('Slider pagination not found in:', root);
-            return;
-        }
-
-        this.updateItems();
+        this.autoScroll = autoScroll;
+        this.autoScrollInterval = null;
         this.init();
-        this.observeDOM();
     }
 
-    updateItems() {
-        this.items = [...this.root.querySelectorAll(this.isOptionsSlider ? '[data-js-options-slider-item]' : '[data-js-reviews-slider-item]')];
-        if (!this.list || !this.items.length) {
-            console.error('No items found or list is missing in', this.isOptionsSlider ? 'options' : 'reviews');
-            return false;
+    updateVisibleItems() {
+        const windowWidth = window.innerWidth;
+        if (windowWidth > 1024) {
+            this.visibleItems = 3;
+        } else if (windowWidth <= 1024 && windowWidth > 780) {
+            this.visibleItems = 2;
+        } else {
+            this.visibleItems = 1; 
         }
-        return true;
-    }
-
-    observeDOM() {
-        const observer = new MutationObserver(() => {
-            if (this.updateItems()) {
-                this.updateDimensions();
-                this.createPagination();
-                this.currentIndex = Math.min(this.currentIndex, Math.max(0, this.items.length - this.visibleItems));
-                this.scrollToCurrent();
-                this.updatePagination();
-            } else {
-                if (this.pagination) this.pagination.innerHTML = '';
-            }
-        });
-        observer.observe(this.list, { childList: true, subtree: true });
     }
 
     init() {
-        if (!this.items.length) {
-            console.error('No items found to initialize slider for', this.isOptionsSlider ? 'options' : 'reviews');
-            return;
-        }
-
-        this.updateDimensions();
         this.createPagination();
+        this.scrollToCurrent();
         this.updatePagination();
 
-        this.list.addEventListener('scroll', () => {
-            if (this.isScrolling) return;
-            this.updatePagination();
-        });
+        if (this.autoScroll) {
+            this.startAutoScroll();
+        }
 
         this.list.addEventListener('wheel', (e) => {
-            if (!e.shiftKey && Math.abs(e.deltaY) > Math.abs(e.deltaX)) return;
+            if (Math.abs(e.deltaY) > Math.abs(e.deltaX)) return;
+            e.preventDefault();
             if (this.isScrolling) return;
             this.isScrolling = true;
             this.slide(e.deltaX > 0 || e.deltaY > 0 ? 'next' : 'prev');
-            setTimeout(() => this.isScrolling = false, 300);
+            setTimeout(() => (this.isScrolling = false), 300);
         });
 
         this.list.addEventListener('touchstart', (e) => {
             this.touchStartX = e.touches[0].clientX;
+            if (this.autoScrollInterval) {
+                clearInterval(this.autoScrollInterval);
+            }
         });
 
         this.list.addEventListener('touchmove', (e) => {
@@ -90,83 +65,77 @@ class Slider {
             if (Math.abs(deltaX) < 50) return;
             this.isScrolling = true;
             this.slide(deltaX > 0 ? 'next' : 'prev');
-            setTimeout(() => this.isScrolling = false, 300);
+            setTimeout(() => {
+                this.isScrolling = false;
+                if (this.autoScroll) this.startAutoScroll();
+            }, 300);
         });
 
         window.addEventListener('resize', () => {
-            this.updateDimensions();
+            this.updateVisibleItems();
+            this.itemWidth = this.items[0].offsetWidth;
+            this.gap = parseInt(getComputedStyle(this.list).gap) || 20;
+            this.itemWidthWithGap = this.itemWidth + this.gap;
+            this.currentIndex = Math.min(this.currentIndex, this.items.length - this.visibleItems);
             this.createPagination();
-            this.currentIndex = Math.min(this.currentIndex, Math.max(0, this.items.length - this.visibleItems));
             this.scrollToCurrent();
             this.updatePagination();
+
+            if (this.autoScrollInterval) {
+                clearInterval(this.autoScrollInterval);
+                if (this.autoScroll) this.startAutoScroll();
+            }
         });
     }
 
-    updateDimensions() {
-        this.visibleItems = this.isOptionsSlider ? 1 :
-                           window.innerWidth > 1024 ? 3 :
-                           window.innerWidth > 768 ? 2 : 1;
-        this.gap = parseInt(getComputedStyle(this.list).gap) || 20;
-        this.itemWidth = this.items[0] ? this.items[0].getBoundingClientRect().width + this.gap : 0;
+    startAutoScroll() {
+        this.autoScrollInterval = setInterval(() => {
+            const maxIndex = this.items.length - this.visibleItems;
+            if (this.currentIndex >= maxIndex) {
+                this.currentIndex = 0;
+            } else {
+                this.currentIndex++;
+            }
+            this.scrollToCurrent();
+            this.updatePagination();
+        }, 5000);
     }
 
     createPagination() {
-        if (!this.pagination) {
-            console.error('Pagination element not found in', this.isOptionsSlider ? 'options' : 'reviews');
-            return;
-        }
         this.pagination.innerHTML = '';
-        const pageCount = this.isOptionsSlider ? Math.ceil(this.items.length / this.visibleItems) :
-                         Math.max(1, this.items.length - this.visibleItems + 1);
-        
-        for (let i = 0; i < pageCount; i++) {
+        const maxIndex = Math.max(0, this.items.length - this.visibleItems);
+        for (let i = 0; i <= maxIndex; i++) {
             const dot = document.createElement('button');
-            dot.classList.add(this.isOptionsSlider ? 'options__slider-pagination-dot' : 'reviews__slider-pagination-dot');
-            dot.type = 'button';
+            dot.classList.add('reviews__slider-pagination-dot');
             dot.setAttribute('aria-label', `Slide ${i + 1}`);
             dot.addEventListener('click', () => {
                 this.currentIndex = i;
                 this.scrollToCurrent();
                 this.updatePagination();
+
+                if (this.autoScrollInterval) {
+                    clearInterval(this.autoScrollInterval);
+                    if (this.autoScroll) this.startAutoScroll();
+                }
             });
             this.pagination.appendChild(dot);
         }
     }
 
     slide(direction) {
-        const maxIndex = this.isOptionsSlider ? Math.ceil(this.items.length / this.visibleItems) - 1 :
-                         Math.max(0, this.items.length - this.visibleItems);
-        this.currentIndex = direction === 'prev' ?
-                            Math.max(0, this.currentIndex - 1) :
-                            Math.min(maxIndex, this.currentIndex + 1);
-        this.updateDimensions();
+        const maxIndex = this.items.length - this.visibleItems;
+        this.currentIndex = direction === 'prev' ? Math.max(0, this.currentIndex - 1) : Math.min(maxIndex, this.currentIndex + 1);
         this.scrollToCurrent();
         this.updatePagination();
     }
 
     scrollToCurrent() {
-        if (!this.items.length) return;
-        this.list.scrollTo({
-            left: this.currentIndex * this.itemWidth,
-            behavior: 'smooth'
-        });
+        const offset = this.currentIndex * this.itemWidthWithGap;
+        this.list.style.transform = `translateX(-${offset}px)`;
     }
 
     updatePagination() {
-        if (!this.pagination) return;
-        const scrollLeft = this.list.scrollLeft;
-        const newIndex = Math.round(scrollLeft / this.itemWidth);
-        if (newIndex !== this.currentIndex) {
-            this.currentIndex = newIndex;
-        }
-
-        const dots = this.pagination.querySelectorAll(`.${this.isOptionsSlider ? 'options__slider-pagination-dot' : 'reviews__slider-pagination-dot'}`);
-        const expectedDots = this.isOptionsSlider ? Math.ceil(this.items.length / this.visibleItems) :
-                            Math.max(1, this.items.length - this.visibleItems + 1);
-        if (dots.length !== expectedDots) {
-            this.createPagination();
-            return;
-        }
+        const dots = this.pagination.querySelectorAll('.reviews__slider-pagination-dot');
         dots.forEach((dot, index) => {
             dot.classList.toggle('is-active', index === this.currentIndex);
             dot.disabled = index === this.currentIndex;

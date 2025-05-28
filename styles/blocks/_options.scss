@@ -13,61 +13,90 @@
     &__body {
         display: flex;
         flex-direction: column;
+        margin: 0;
     }
 
     &__slider {
         position: relative;
         overflow: hidden;
+        width: 100%;
+        margin-bottom: rem(20);
 
-        &-list {
-            display: flex;
-            gap: rem(20);
-            overflow-x: auto;
-            scroll-snap-type: x mandatory;
-            -webkit-overflow-scrolling: touch;
+        @include mobile {
             margin: 0;
-            padding: 0;
-
-            @include tablet {
-                gap: rem(16);
-                margin-bottom: rem(20);
-            }
         }
+    }
 
-        &-item {
-            flex: 0 0 auto;
-            scroll-snap-align: start;
-            box-sizing: border-box;
-            min-width: 0;
-            width: calc((100% - rem(40)) / 3);
-
-            @include tablet {
-                width: calc((100% - rem(20)) / 2);
-            }
-
-            @include mobile {
-                width: calc(100% - rem(20));
-            }
-        }
-
-        &-pagination {
+    &__slider-list {
+        @include tablet-above {
             display: flex;
             justify-content: center;
-            gap: rem(10);
-            margin: rem(30) 0;
-            
-            &-dot {
-                @include square(rem(20));
-                
-                border: none;
-                border-radius: 50%;
-                cursor: pointer;
-                background-color: var(--color-accent-light);
-                transition: var(--transition-duration);
+            gap: rem(20);
+            flex-wrap: nowrap;
+            margin: 0;
+            padding: 0;
+        }
+        
+        @include tablet {
+            display: flex;
+            gap: rem(16);
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            transition: transform 0.5s ease;
+            margin-bottom: rem(20);
+        }
 
-                &.is-active {
-                    background-color: var(--color-accent);
-                }
+        @include mobile {
+            display: flex;
+            gap: rem(20);
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            transition: transform 0.5s ease;
+        }
+    }
+
+    &__slider-item {
+        @include tablet-above {
+            width: 100%;
+            flex: 1;
+        }
+
+        @include tablet {
+            flex: 0 0 calc((100% - rem(16)) / 2);
+            box-sizing: border-box;
+            min-width: calc((100% - rem(16)) / 2);
+        }
+
+        @include mobile {
+            flex: 0 0 100%;
+            box-sizing: border-box;
+            min-width: 100%;
+        }
+    }
+
+    &__slider-pagination {
+        @include tablet-above {
+            display: none;
+        }
+
+        display: flex;
+        justify-content: center;
+        gap: rem(10);
+        margin: rem(30) 0;
+        
+        &-dot {
+            @include square(rem(20));
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            background-color: var(--color-accent-light);
+            transition: var(--transition-duration);
+
+            &.is-active {
+                background-color: var(--color-accent);
+                scale: 1.2;
             }
         }
     }
@@ -75,9 +104,6 @@
     &__show-all {
         justify-content: center;
         padding: rem(40) 0;
-
-        @include tablet {
-        }
 
         @include mobile {
             padding: rem(25) 0;

@@ -9,15 +9,11 @@ function initSliders() {
     const optionsSlider = document.querySelector('[data-js-options-slider]');
     if (optionsSlider) {
         new Slider(optionsSlider, true);
-    } else {
-        console.warn('Элемент слайдера опций не найден');
     }
 
     const reviewsSlider = document.querySelector('[data-js-reviews-slider]');
     if (reviewsSlider) {
-        new Slider(reviewsSlider, false);
-    } else {
-        console.warn('Элемент слайдера отзывов не найден');
+        new Slider(reviewsSlider, false, true); 
     }
 }
 

@@ -2,7 +2,7 @@
 
 .reviews {
     margin-top: rem(40);
-    scroll-margin-top: rem(250);
+    scroll-margin-top: rem(350);
 
     @include tablet {
         margin-top: rem(30);
@@ -20,51 +20,51 @@
     &__slider {
         position: relative;
         overflow: hidden;
-        padding-inline: rem(30);
+        width: 100%;
+        margin: 0 auto;
+        padding: 0 rem(40);
+    }
 
-        &-list {
-            display: flex;
-            gap: rem(20);
-            overflow-x: auto;
-            scroll-snap-type: x mandatory;
-            -webkit-overflow-scrolling: touch;
-            margin: 0;
-            padding: 0;
+    &__slider-list {
+        display: flex;
+        gap: rem(20);
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        transition: transform 0.3s ease;
+        transform: translateX(0);
+    }
+
+    &__slider-item {
+        flex: 0 0 auto;
+        max-width: rem(420); // Десктоп: 3 элемента
+
+        @include tablet {
+            max-width: rem(380); // Планшет: 2 элемента
         }
 
-        &-item {
-            flex: 0 0 auto;
-            scroll-snap-align: start;
-            box-sizing: border-box;
-            min-width: 0;
-            width: calc((100% - rem(40)) / 3);
-
-            @include tablet {
-                width: calc((100% - rem(20)) / 2);
-            }
-
-            @include mobile {
-                width: calc(100% - rem(20));
-            }
+        @media (max-width: 780px) {
+            max-width: 100%;
         }
+    }
 
-        &-pagination {
-            display: flex;
-            justify-content: center;
-            gap: rem(10);
-            margin: rem(30) 0;
+    &__slider-pagination {
+        display: flex;
+        justify-content: center;
+        gap: rem(10);
+        margin: rem(30) 0;
 
-            &-dot {
-                @include square(rem(20));
-                
-                border: none;
-                border-radius: 50%;
-                cursor: pointer;
-                background-color: var(--color-accent-light);
+        &-dot {
+            @include square(rem(20));
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            background-color: var(--color-accent-light);
+            transition-duration: var(--transition-duration);
 
-                &:disabled {
-                    background-color: var(--color-accent);
-                }
+            &.is-active {
+                background-color: var(--color-accent);
+                scale: 1.2;
             }
         }
     }

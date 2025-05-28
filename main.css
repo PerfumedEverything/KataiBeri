@@ -209,7 +209,7 @@ svg * {
   --color-form-button: #FFEBFC;
   --color-location-tag: #eaf3d2;
   --font-family-base: "Inter", sans-serif;
-  --container-width: 82.375rem;
+  --container-width: 87.5rem;
   --container-padding-x: 1rem;
   --transition-duration: .2s;
 }
@@ -1294,41 +1294,68 @@ a {
 .options__body {
   display: flex;
   flex-direction: column;
+  margin: 0;
 }
 .options__slider {
   position: relative;
   overflow: hidden;
+  width: 100%;
+  margin-bottom: 1.25rem;
 }
-.options__slider-list {
-  display: flex;
-  gap: 1.25rem;
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
-  -webkit-overflow-scrolling: touch;
-  margin: 0;
-  padding: 0;
+@media (width <= 47.99875rem) {
+  .options__slider {
+    margin: 0;
+  }
+}
+@media (width > 63.99875rem) {
+  .options__slider-list {
+    display: flex;
+    justify-content: center;
+    gap: 1.25rem;
+    flex-wrap: nowrap;
+    margin: 0;
+    padding: 0;
+  }
 }
 @media (width <= 63.99875rem) {
   .options__slider-list {
+    display: flex;
     gap: 1rem;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    transition: transform 0.5s ease;
     margin-bottom: 1.25rem;
   }
 }
-.options__slider-item {
-  flex: 0 0 auto;
-  scroll-snap-align: start;
-  box-sizing: border-box;
-  min-width: 0;
-  width: calc((100% - 2.5rem) / 3);
+@media (width <= 47.99875rem) {
+  .options__slider-list {
+    display: flex;
+    gap: 1.25rem;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    transition: transform 0.5s ease;
+  }
+}
+@media (width > 63.99875rem) {
+  .options__slider-item {
+    width: 100%;
+    flex: 1;
+  }
 }
 @media (width <= 63.99875rem) {
   .options__slider-item {
-    width: calc((100% - 1.25rem) / 2);
+    flex: 0 0 calc((100% - 1rem) / 2);
+    box-sizing: border-box;
+    min-width: calc((100% - 1rem) / 2);
   }
 }
 @media (width <= 47.99875rem) {
   .options__slider-item {
-    width: calc(100% - 1.25rem);
+    flex: 0 0 100%;
+    box-sizing: border-box;
+    min-width: 100%;
   }
 }
 .options__slider-pagination {
@@ -1336,6 +1363,11 @@ a {
   justify-content: center;
   gap: 0.625rem;
   margin: 1.875rem 0;
+}
+@media (width > 63.99875rem) {
+  .options__slider-pagination {
+    display: none;
+  }
 }
 .options__slider-pagination-dot {
   width: 1.25rem;
@@ -1348,6 +1380,7 @@ a {
 }
 .options__slider-pagination-dot.is-active {
   background-color: var(--color-accent);
+  scale: 1.2;
 }
 .options__show-all {
   justify-content: center;
@@ -1572,7 +1605,7 @@ a {
 
 .reviews {
   margin-top: 2.5rem;
-  scroll-margin-top: 15.625rem;
+  scroll-margin-top: 21.875rem;
 }
 @media (width <= 63.99875rem) {
   .reviews {
@@ -1591,32 +1624,31 @@ a {
 .reviews__slider {
   position: relative;
   overflow: hidden;
-  padding-inline: 1.875rem;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 2.5rem;
 }
 .reviews__slider-list {
   display: flex;
   gap: 1.25rem;
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
-  -webkit-overflow-scrolling: touch;
   margin: 0;
   padding: 0;
+  width: 100%;
+  transition: transform 0.3s ease;
+  transform: translateX(0);
 }
 .reviews__slider-item {
   flex: 0 0 auto;
-  scroll-snap-align: start;
-  box-sizing: border-box;
-  min-width: 0;
-  width: calc((100% - 2.5rem) / 3);
+  max-width: 26.25rem;
 }
 @media (width <= 63.99875rem) {
   .reviews__slider-item {
-    width: calc((100% - 1.25rem) / 2);
+    max-width: 23.75rem;
   }
 }
-@media (width <= 47.99875rem) {
+@media (max-width: 780px) {
   .reviews__slider-item {
-    width: calc(100% - 1.25rem);
+    max-width: 100%;
   }
 }
 .reviews__slider-pagination {
@@ -1632,9 +1664,11 @@ a {
   border-radius: 50%;
   cursor: pointer;
   background-color: var(--color-accent-light);
+  transition-duration: var(--transition-duration);
 }
-.reviews__slider-pagination-dot:disabled {
+.reviews__slider-pagination-dot.is-active {
   background-color: var(--color-accent);
+  scale: 1.2;
 }
 
 .review-card {
@@ -1647,7 +1681,7 @@ a {
 }
 
 .map {
-  scroll-margin-top: 10.625rem;
+  scroll-margin-top: 15.625rem;
 }
 .map__title {
   text-align: center;
@@ -1727,6 +1761,16 @@ a {
   flex: 2;
   height: 39.25rem;
   overflow: hidden;
+}
+@media (width <= 63.99875rem) {
+  .map__container {
+    height: 31.25rem;
+  }
+}
+@media (width <= 47.99875rem) {
+  .map__container {
+    flex: none;
+  }
 }
 
 .questions__body {

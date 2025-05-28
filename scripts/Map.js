@@ -22,19 +22,19 @@ export default class Map {
 
     initMap() {
         this.myMap = new ymaps.Map(this.mapContainer, {
-            center: [48.7326, 44.5432], 
+            center: [48.7326, 44.5432],
             zoom: 12,
             controls: ['zoomControl']
         });
 
         const locations = [
             {
-                coords: [48.7326, 44.5432], 
+                coords: [48.7326, 44.5432],
                 label: 'ЦПКиО',
                 description: 'Пн-Пт: 9:00-19:00<br>Сб-Вс: 9:00-21:00'
             },
             {
-                coords: [48.7028, 44.5295], 
+                coords: [48.7028, 44.5295],
                 label: 'Чуйкова',
                 description: 'Пн-Пт: 9:00-19:00<br>Сб-Вс: 9:00-21:00'
             }
@@ -66,5 +66,9 @@ export default class Map {
         if (buttons.length > 0) {
             buttons[0].classList.add('active');
         }
+
+        setTimeout(() => {
+            this.myMap.container.fitToViewport();
+        }, 100);
     }
 }
