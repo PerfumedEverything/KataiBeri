@@ -22,11 +22,11 @@ class Slider {
     updateVisibleItems() {
         const windowWidth = window.innerWidth;
         if (windowWidth > 1024) {
-            this.visibleItems = 3;
+            this.visibleItems = 3; // 3 видимых элемента на десктопе
         } else if (windowWidth <= 1024 && windowWidth > 780) {
-            this.visibleItems = 2;
+            this.visibleItems = 2; // 2 видимых элемента на планшетах
         } else {
-            this.visibleItems = 1; 
+            this.visibleItems = 1; // 1 видимый элемент на мобильных
         }
     }
 
@@ -39,12 +39,16 @@ class Slider {
             this.startAutoScroll();
         }
 
+        // Обработчик для скролла колёсиком (включая вертикальный скролл)
         this.list.addEventListener('wheel', (e) => {
-            if (Math.abs(e.deltaY) > Math.abs(e.deltaX)) return;
             e.preventDefault();
             if (this.isScrolling) return;
             this.isScrolling = true;
-            this.slide(e.deltaX > 0 || e.deltaY > 0 ? 'next' : 'prev');
+
+            // Учитываем как горизонтальный, так и вертикальный скролл
+            const direction = e.deltaX > 0 || e.deltaY > 0 ? 'next' : 'prev';
+            this.slide(direction);
+
             setTimeout(() => (this.isScrolling = false), 300);
         });
 
@@ -104,6 +108,9 @@ class Slider {
     createPagination() {
         this.pagination.innerHTML = '';
         const maxIndex = Math.max(0, this.items.length - this.visibleItems);
+        // Проверяем корректность maxIndex
+        console.log(`Items: ${this.items.length}, Visible: ${this.visibleItems}, Max Index: ${maxIndex}`);
+        
         for (let i = 0; i <= maxIndex; i++) {
             const dot = document.createElement('button');
             dot.classList.add('reviews__slider-pagination-dot');

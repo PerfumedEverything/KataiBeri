@@ -1,7 +1,6 @@
 @use '../helpers' as *;
 
 .filters {
-    
     &__title {
         text-align: center;
         margin: rem(40) 0;
@@ -153,6 +152,10 @@
             @include fluid-text(28, 20);
 
             padding: rem(30);
+        }
+
+        &-item {
+            min-width: 0;
         }
     }
 

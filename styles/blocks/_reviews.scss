@@ -2,14 +2,10 @@
 
 .reviews {
     margin-top: rem(40);
-    scroll-margin-top: rem(350);
+    scroll-margin-top: rem(100);
 
     @include tablet {
         margin-top: rem(30);
-    }
-
-    @include mobile {
-        scroll-margin-top: rem(100);
     }
 
     &__title {

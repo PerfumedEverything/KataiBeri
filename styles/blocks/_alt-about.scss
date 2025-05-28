@@ -21,6 +21,10 @@
         padding: rem(40);
         border-radius: rem(55);
         row-gap: rem(40);
+        min-width: 0;
+        overflow-wrap: break-word;
+        word-break: normal;
+        white-space: normal;
 
         @include laptop-above {
             height: rem(400);
@@ -85,7 +89,6 @@
     }
 
     &__paragraph {
-        display: flex;
         gap: rem(14);
 
         &-icon {

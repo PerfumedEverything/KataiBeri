@@ -1610,16 +1610,11 @@ a {
 
 .reviews {
   margin-top: 2.5rem;
-  scroll-margin-top: 21.875rem;
+  scroll-margin-top: 6.25rem;
 }
 @media (width <= 63.99875rem) {
   .reviews {
     margin-top: 1.875rem;
-  }
-}
-@media (width <= 47.99875rem) {
-  .reviews {
-    scroll-margin-top: 6.25rem;
   }
 }
 .reviews__title {
@@ -1691,12 +1686,7 @@ a {
 }
 
 .map {
-  scroll-margin-top: 15.625rem;
-}
-@media (width <= 47.99875rem) {
-  .map {
-    scroll-margin-top: 6.25rem;
-  }
+  scroll-margin-top: 6.25rem;
 }
 .map__title {
   text-align: center;
@@ -2044,6 +2034,9 @@ a {
   font-size: clamp(1.25rem, 1.15rem + 0.5vw, 1.75rem);
   padding: 1.875rem;
 }
+.filters__catalog-item {
+  min-width: 0;
+}
 .filters__no-result {
   text-align: center;
   padding: 9.375rem;
@@ -2158,6 +2151,10 @@ a {
   padding: 2.5rem;
   border-radius: 3.4375rem;
   row-gap: 2.5rem;
+  min-width: 0;
+  overflow-wrap: break-word;
+  word-break: normal;
+  white-space: normal;
 }
 @media (width > 92.56125rem) {
   .alt-about__item {
@@ -2217,7 +2214,6 @@ a {
   }
 }
 .alt-about__paragraph {
-  display: flex;
   gap: 0.875rem;
 }
 @media (width <= 63.99875rem) {
