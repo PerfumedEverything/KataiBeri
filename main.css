@@ -1307,9 +1307,9 @@ a {
   width: 100%;
   margin-bottom: 1.25rem;
 }
-@media (width <= 47.99875rem) {
+@media (width <= 63.99875rem) {
   .options__slider {
-    margin: 0;
+    margin-bottom: 0;
   }
 }
 @media (width > 63.99875rem) {

@@ -22,8 +22,8 @@
         width: 100%;
         margin-bottom: rem(20);
 
-        @include mobile {
-            margin: 0;
+        @include tablet {
+            margin-bottom: 0;
         }
     }
 
