@@ -14,7 +14,7 @@
         flex-direction: column;
         min-height: rem(220);
         padding: rem(40);
-        border-radius: rem(55);
+        border-radius: rem(30);
         row-gap: rem(40);
 
         @include laptop-above {

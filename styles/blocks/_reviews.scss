@@ -37,13 +37,13 @@
 
     &__slider-item {
         flex: 0 0 auto;
-        max-width: rem(420); // Десктоп: 3 элемента
+        max-width: rem(420);
 
         @include tablet {
-            max-width: rem(380); // Планшет: 2 элемента
+            max-width: rem(380); 
         }
 
-        @media (max-width: 780px) {
+        @include mobile {
             max-width: 100%;
         }
     }
@@ -55,7 +55,7 @@
         margin: rem(30) 0;
 
         &-dot {
-            @include square(rem(20));
+            @include square(rem(10));
             border: none;
             border-radius: 50%;
             cursor: pointer;

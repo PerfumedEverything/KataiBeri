@@ -13,7 +13,7 @@
         row-gap: rem(70);
         padding: rem(40);
         background: url(./images/form-bg.png) 50%/cover no-repeat;
-        border-radius: rem(55);
+        border-radius: rem(30);
 
         @include mobile {
             min-height: fit-content;
@@ -37,15 +37,17 @@
         &-title {
             max-width: rem(650);
             color: var(--color-white);
-            line-height: 110%;
+            line-height: 1.2;
         }
 
         &-subtitle {
             @include fluid-text(20, 16);
 
+            align-self: start;
             max-width: rem(360);
+            padding-top: rem(15);
             color: var(--color-white);
-            line-height: 1.4;
+            line-height: 1.2;
         } 
     }
 
@@ -79,7 +81,7 @@
     &__input {
         padding: rem(15) rem(20);
         border: none;
-        border-radius: rem(24);
+        border-radius: rem(10);
         flex: 1; 
         min-width: 0;
         margin: 0;

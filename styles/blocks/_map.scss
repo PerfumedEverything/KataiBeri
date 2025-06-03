@@ -5,10 +5,10 @@
 
     &__title {
         text-align: center;
-        margin: rem(40) 0;
+        margin: rem(50) 0 rem(30) 0;
 
         @include mobile {
-            margin: rem(30) 0;
+            margin: rem(30) 0 rem(15) 0;
         }   
     }
     
@@ -46,7 +46,7 @@
             flex-direction: column;
             justify-content: space-between;
             width: rem(300);
-            row-gap: rem(50);
+            height: 50%;
             padding: rem(30);
             cursor: pointer;
 
@@ -79,7 +79,7 @@
     }
 
     &__container {
-        border-radius: rem(55);
+        border-radius: rem(30);
         width: 100%;
         flex: 2;
         height: rem(628); 

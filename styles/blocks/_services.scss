@@ -3,10 +3,10 @@
 .services {
     &__title {
         text-align: center;
-        padding: rem(40) 0;
+        margin: rem(50) 0 rem(30) 0;
 
         @include mobile {
-            padding: rem(30) 0;
+            margin: rem(30) 0 rem(15) 0;
         }
     }
 

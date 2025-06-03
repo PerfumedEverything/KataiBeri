@@ -3,10 +3,10 @@
 .options {
     &__title {
         text-align: center;
-        padding: rem(40) 0;
+        margin: rem(50) 0 rem(30) 0;
 
         @include mobile {
-            padding: rem(30) 0;
+            margin: rem(30) 0 rem(15) 0;
         }
     }
 
@@ -102,11 +102,9 @@
     }
 
     &__show-all {
+        @include fluid-text(24, 18);
+        
         justify-content: center;
-        padding: rem(40) 0;
-
-        @include mobile {
-            padding: rem(25) 0;
-        }
+        padding: rem(25) 0;
     }
 }

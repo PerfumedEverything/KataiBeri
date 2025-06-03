@@ -11,7 +11,7 @@
         align-items: center;
         column-gap: rem(72);
         padding: rem(20);
-        border-radius: rem(30);
+        border-radius: 0 0 rem(20) rem(20);
         background-color: var(--color-accent);
 
         @include tablet {
