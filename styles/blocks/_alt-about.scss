@@ -3,25 +3,20 @@
 .alt-about {
     &__main-title {
         text-align: center;
-        margin: rem(40) 0;
-
-        @include tablet {
-            margin: rem(30) 0;
-        }
+        margin: rem(50) 0 rem(30) 0;
 
         @include mobile {
-            margin: rem(20) 0;
+            margin: rem(30) 0 rem(15) 0;
         }
     }
 
     &__item {
         display: flex;
         flex-direction: column;
+        min-width: 0;
         min-height: rem(200);
         padding: rem(40);
-        border-radius: rem(55);
         row-gap: rem(40);
-        min-width: 0;
         overflow-wrap: break-word;
         word-break: normal;
         white-space: normal;

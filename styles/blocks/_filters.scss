@@ -3,10 +3,10 @@
 .filters {
     &__title {
         text-align: center;
-        margin: rem(40) 0;
+        margin: rem(50) 0 rem(30) 0;
 
         @include mobile {
-            margin: rem(30) 0;
+            margin: rem(30) 0 rem(15) 0;
         }
     }
 
@@ -36,7 +36,7 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
-            padding: rem(34) rem(30);
+            padding: rem(30);
 
             @include tablet-above {
                 pointer-events: none;
@@ -176,6 +176,8 @@
     }
 
     &__show-all {
+        @include fluid-text(24, 18);
+        
         width: 100%;
         justify-content: center;
         padding: rem(40) 0;
