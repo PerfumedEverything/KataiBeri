@@ -3,6 +3,7 @@ class Slider {
         this.root = root;
         if (!this.root) return;
 
+        this.isOptionsSlider = isOptionsSlider; 
         this.list = this.root.querySelector(isOptionsSlider ? '[data-js-options-slider-list]' : '[data-js-reviews-slider-list]');
         this.pagination = this.root.querySelector(isOptionsSlider ? '[data-js-options-slider-pagination]' : '[data-js-reviews-slider-pagination]');
         this.items = [...this.list.querySelectorAll(isOptionsSlider ? '[data-js-options-slider-item]' : '[data-js-reviews-slider-item]')];
@@ -40,7 +41,11 @@ class Slider {
         }
 
         this.list.addEventListener('wheel', (e) => {
-            e.preventDefault();
+            if (this.isOptionsSlider && window.innerWidth > 1024) {
+                return; 
+            }
+
+            e.preventDefault(); 
 
             if (this.isScrolling) return;
             this.isScrolling = true;
