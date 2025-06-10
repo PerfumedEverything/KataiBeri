@@ -209,7 +209,7 @@ svg * {
   --color-form-button: #FFEBFC;
   --color-location-tag: #eaf3d2;
   --font-family-base: "Inter", sans-serif;
-  --container-width: 87.5rem;
+  --container-width: 96.875rem;
   --container-padding-x: 1rem;
   --transition-duration: .2s;
 }
