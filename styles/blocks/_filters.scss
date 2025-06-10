@@ -31,7 +31,7 @@
             align-items: center;
             justify-content: end;
             column-gap: rem(24);
-            padding: rem(30);
+            padding: rem(20);
             cursor: pointer;
 
             @include tablet {
@@ -47,7 +47,7 @@
             }
 
             &-btn {
-                @include square(rem(24));
+                @include square(rem(40));
 
                 position: relative;
                 cursor: pointer;
@@ -60,18 +60,21 @@
                     height: 100%;
                     top: 0;
                     left: 0;
-                    background: url(./icons/filters-icon.svg);
+                    background: url(./icons/filters-icon.svg) center no-repeat;
                     transition: var(--transition-duration);
                 }
 
                 &.is-active {
+                    background-color: var(--color-white);
+                    border-radius: 50%;
+
                     &::after {
                         content: '';
                         position: absolute;
                         top: 50%;
                         left: 50%;
-                        width: 100%; 
-                        height: rem(3);
+                        width: 50%; 
+                        height: rem(2);
                         border-radius: rem(50);
                         background-color: var(--color-dark);
                         transform: translate(-50%, -50%) rotate(45deg);
@@ -84,8 +87,8 @@
                         position: absolute;
                         top: 50%;
                         left: 50%;
-                        width: 100%; 
-                        height: rem(3);
+                        width: 50%; 
+                        height: rem(2);
                         border-radius: rem(50);
                         background-color: var(--color-dark);
                         transform: translate(-50%, -50%) rotate(-45deg);
@@ -117,7 +120,7 @@
             top: 0;
             right: 0;
             width: rem(600);
-            padding: rem(30);
+            padding: rem(40) rem(30) rem(30) rem(30);
             background-color: var(--color-gray);
             z-index: 101;
 
@@ -130,20 +133,20 @@
             &--title {
                 margin-bottom: rem(20);
             }
+
+            @include mobile {
+                width: 100%;
+            }
         }
 
         &-group {
             display: flex;
             flex-direction: column;
-            row-gap: rem(12);
-            padding: rem(30);
+            row-gap: rem(8);
+            padding: rem(30) rem(16);
 
-            @include tablet {
-                width: 49.1%;
-            }
-
-            @include mobile {
-                width: 100%;
+            & p {
+                margin-bottom: rem(15);
             }
         }
     }

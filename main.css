@@ -735,7 +735,7 @@ a {
 
 .header {
   position: sticky;
-  z-index: 100;
+  z-index: 103;
   top: 0;
 }
 .header-inner {
@@ -1902,7 +1902,7 @@ a {
   align-items: center;
   justify-content: end;
   column-gap: 1.5rem;
-  padding: 1.875rem;
+  padding: 1.25rem;
   cursor: pointer;
 }
 @media (width <= 63.99875rem) {
@@ -1919,8 +1919,8 @@ a {
   font-size: clamp(0.875rem, 0.825rem + 0.25vw, 1.125rem);
 }
 .filters__panel-header-btn {
-  width: 1.5rem;
-  height: 1.5rem;
+  width: 2.5rem;
+  height: 2.5rem;
   position: relative;
   cursor: pointer;
   z-index: 102;
@@ -1932,16 +1932,20 @@ a {
   height: 100%;
   top: 0;
   left: 0;
-  background: url(./icons/filters-icon.svg);
+  background: url(./icons/filters-icon.svg) center no-repeat;
   transition: var(--transition-duration);
+}
+.filters__panel-header-btn.is-active {
+  background-color: var(--color-white);
+  border-radius: 50%;
 }
 .filters__panel-header-btn.is-active::after {
   content: "";
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 100%;
-  height: 0.1875rem;
+  width: 50%;
+  height: 0.125rem;
   border-radius: 3.125rem;
   background-color: var(--color-dark);
   transform: translate(-50%, -50%) rotate(45deg);
@@ -1953,8 +1957,8 @@ a {
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 100%;
-  height: 0.1875rem;
+  width: 50%;
+  height: 0.125rem;
   border-radius: 3.125rem;
   background-color: var(--color-dark);
   transform: translate(-50%, -50%) rotate(-45deg);
@@ -1980,7 +1984,7 @@ a {
   top: 0;
   right: 0;
   width: 37.5rem;
-  padding: 1.875rem;
+  padding: 2.5rem 1.875rem 1.875rem 1.875rem;
   background-color: var(--color-gray);
   z-index: 101;
 }
@@ -1992,21 +1996,19 @@ a {
 .filters__panel-groups--title {
   margin-bottom: 1.25rem;
 }
+@media (width <= 47.99875rem) {
+  .filters__panel-groups {
+    width: 100%;
+  }
+}
 .filters__panel-group {
   display: flex;
   flex-direction: column;
-  row-gap: 0.75rem;
-  padding: 1.875rem;
+  row-gap: 0.5rem;
+  padding: 1.875rem 1rem;
 }
-@media (width <= 63.99875rem) {
-  .filters__panel-group {
-    width: 49.1%;
-  }
-}
-@media (width <= 47.99875rem) {
-  .filters__panel-group {
-    width: 100%;
-  }
+.filters__panel-group p {
+  margin-bottom: 0.9375rem;
 }
 .filters__catalog {
   display: flex;

@@ -2,7 +2,7 @@
 
 .header {
     position: sticky;
-    z-index: 100;
+    z-index: 103;
     top: 0;
 
     &-inner {
@@ -48,7 +48,6 @@
     }
     
     &__overlay {
-
         &-logo {
             @include tablet-above {
                 display: none;
