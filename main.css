@@ -1984,7 +1984,7 @@ a {
   top: 0;
   right: 0;
   width: 37.5rem;
-  padding: 2.5rem 1.875rem 1.875rem 1.875rem;
+  padding: 1.875rem;
   background-color: var(--color-gray);
   z-index: 101;
 }
@@ -1996,9 +1996,15 @@ a {
 .filters__panel-groups--title {
   margin-bottom: 1.25rem;
 }
+@media (width <= 63.99875rem) {
+  .filters__panel-groups {
+    padding: 2.375rem 1.875rem 1.875rem 1.875rem;
+  }
+}
 @media (width <= 47.99875rem) {
   .filters__panel-groups {
     width: 100%;
+    padding: 1.75rem 1.25rem 1.25rem 1.25rem;
   }
 }
 .filters__panel-group {

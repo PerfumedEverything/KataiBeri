@@ -120,7 +120,7 @@
             top: 0;
             right: 0;
             width: rem(600);
-            padding: rem(40) rem(30) rem(30) rem(30);
+            padding: rem(30);
             background-color: var(--color-gray);
             z-index: 101;
 
@@ -134,8 +134,13 @@
                 margin-bottom: rem(20);
             }
 
+            @include tablet {
+                padding: rem(38) rem(30) rem(30) rem(30);
+            }
+
             @include mobile {
                 width: 100%;
+                padding: rem(28) rem(20) rem(20) rem(20);
             }
         }
 
