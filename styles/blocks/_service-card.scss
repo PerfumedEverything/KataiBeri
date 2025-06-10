@@ -41,8 +41,9 @@
 
         &-extra {
             align-self: end;
+            align-items: center;
             column-gap: rem(10);
-            line-height: .95;
+            line-height: .9;
             padding: rem(20) rem(30);
         }
     }

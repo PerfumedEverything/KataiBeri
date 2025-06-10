@@ -168,14 +168,15 @@
         </section>
 
         <section class="filters" data-js-filters>
-            <h2 class="filters__title">Весь парк</h2>
             <div class="filters__body container">
+                <h2 class="filters__title frame">Весь парк</h2>
                 <div class="filters__panel" data-js-filters-panel>
                     <div class="filters__panel-header frame-filters">
                         <p class="filters__panel-header-title">Фильтры</p>
                         <a class="filters__panel-header-btn"></a>
                     </div>
-                    <div class="filters__panel-overlay">
+                    <div class="filters__panel-groups frame">
+                        <p class="filters__panel-groups--title">Фильтры:</p>
                         <div class="filters__panel-group frame-filters">
                             <p>Локация:</p>
                             <button class="button-filters active" data-filter="all">
@@ -185,48 +186,49 @@
                             </button>
                             <button class="button-filters" data-filter="location-1">
                                 <div class="button-filters__cross">
-                                </div>
-                                Локация 1
-                            </button>
-                            <button class="button-filters" data-filter="location-2">
-                                <div class="button-filters__cross">
-                                </div>
-                                Локация 2
-                            </button>
-                        </div>
-                        <div class="filters__panel-group frame-filters">
-                            <p>Ассортимент:</p>
-                            <button class="button-filters active" data-filter="all">
-                                <div class="button-filters__cross">
-                                </div>
-                                Все
-                            </button>
-                            <button class="button-filters" data-filter="category-1">
-                                <div class="button-filters__cross">
-                                </div>
-                                Электросамокаты
-                            </button>
-                            <button class="button-filters" data-filter="category-2">
-                                <div class="button-filters__cross">
-                                </div>
-                                Сапы
-                            </button>
-                            <button class="button-filters" data-filter="category-3">
-                                <div class="button-filters__cross">
-                                </div>
-                                Велосипеды
-                            </button>
-                            <button class="button-filters" data-filter="category-4">
-                                <div class="button-filters__cross">
-                                </div>
-                                Фэт-Байки
+                                    </div>
+                                    Локация 1
+                                </button>
+                                <button class="button-filters" data-filter="location-2">
+                                    <div class="button-filters__cross">
+                                    </div>
+                                    Локация 2
                             </button>
                         </div>
-                        <div class="filters__buttons">
-                            <button class="filters__apply-button button--green">Применить</button>
-                            <button class="filters__reset-button">Сбросить все</button>
-                        </div>
+                            <div class="filters__panel-group frame-filters">
+                                <p>Ассортимент:</p>
+                                <button class="button-filters active" data-filter="all">
+                                    <div class="button-filters__cross">
+                                    </div>
+                                    Все
+                                </button>
+                                <button class="button-filters" data-filter="category-1">
+                                    <div class="button-filters__cross">
+                                    </div>
+                                    Электросамокаты
+                                </button>
+                                <button class="button-filters" data-filter="category-2">
+                                    <div class="button-filters__cross">
+                                    </div>
+                                    Сапы
+                                </button>
+                                <button class="button-filters" data-filter="category-3">
+                                    <div class="button-filters__cross">
+                                    </div>
+                                    Велосипеды
+                                </button>
+                                <button class="button-filters" data-filter="category-4">
+                                    <div class="button-filters__cross">
+                                    </div>
+                                    Фэт-Байки
+                                </button>
+                            </div>
+                            <div class="filters__buttons">
+                                <button class="filters__apply-button button--green">Применить</button>
+                                <button class="filters__reset-button">Сбросить все</button>
+                            </div>
                     </div>
+                    <div class="filters__panel-overlay"></div>
                 </div>
 
                 <div class="filters__catalog">
@@ -666,7 +668,7 @@
                         <h3 class="alt-about__title">Возврат <span class="no-wrap">в&nbsp;пункт</span> самовызова</h3>
                         <p class="alt-about__paragraph">После поездки осуществите возврат транспорта <span class="no-wrap">в&nbsp;пункт</span> самовывоза.</p>
                     </li>
-                    <li class="alt-about__item" data-bg="accent-light">
+                    <li class="alt-about__item frame" data-bg="accent-light">
                         <h3 class="alt-about__title">Прайс</h3>
                         <p class="alt-about__paragraph">Качественная техника <span class="no-wrap">по&nbsp;честной</span> стоимости. Идеальный баланс цены <span class="no-wrap">и&nbsp;удобства</span> <span class="no-wrap">для&nbsp;вашего</span> активного отдыха.</p>
                         <div class="alt-about__buttons">
@@ -678,7 +680,7 @@
                             </a>
                         </div>
                     </li>
-                    <li class="alt-about__item" data-bg="main">
+                    <li class="alt-about__item frame" data-bg="main">
                         <h2 class="alt-about__title">Оплата <span class="no-wrap">и&nbsp;условия</span> Аренды</h3>
                         <p class="alt-about__paragraph">
                             <span class="alt-about__paragraph-icon">

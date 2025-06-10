@@ -21,7 +21,7 @@ class Filters {
   maxVisibleItemsPerCategory = 3;
 
   constructor(filtersPanelInstance) {
-      this.filtersPanel = filtersPanelInstance; // Передаём экземпляр FiltersPanel
+      this.filtersPanel = filtersPanelInstance; 
       this.root = document.querySelector(this.selectors.root);
       if (!this.root) return;
 
@@ -235,7 +235,6 @@ class Filters {
       this.updateVisibility();
       this.updateToggleButton();
       this.updateFilterCount();
-      // Закрываем панель через FiltersPanel
       if (this.filtersPanel) {
           this.filtersPanel.closePanel();
       }
@@ -274,7 +273,6 @@ class Filters {
       this.updateVisibility();
       this.updateToggleButton();
       this.updateFilterCount();
-      // Закрываем панель при сбросе фильтров (опционально)
       if (this.filtersPanel) {
           this.filtersPanel.closePanel();
       }
@@ -282,36 +280,42 @@ class Filters {
 }
 
 class FiltersPanel {
-  selectors = {
-      root: '[data-js-filters-panel]',
-      overlay: '.filters__panel-overlay',
-      toggleButton: '.filters__panel-header-btn',
-  };
+    selectors = {
+        root: '[data-js-filters-panel]',
+        overlay: '.filters__panel-overlay',
+        toggleButton: '.filters__panel-header-btn',
+        header: '.filters__panel-header',
+        groups: '.filters__panel-groups',
+    };
 
-  stateClasses = {
-      isActive: 'is-active',
-  };
+    stateClasses = {
+        isActive: 'is-active',
+    };
 
-  constructor() {
-      this.rootElement = document.querySelector(this.selectors.root);
-      this.overlayElement = this.rootElement.querySelector(this.selectors.overlay);
-      this.toggleButton = this.rootElement.querySelector(this.selectors.toggleButton);
-      this.bindEvents();
-  }
+    constructor() {
+        this.rootElement = document.querySelector(this.selectors.root);
+        this.overlayElement = this.rootElement.querySelector(this.selectors.overlay);
+        this.toggleButton = this.rootElement.querySelector(this.selectors.toggleButton);
+        this.headerElement = this.rootElement.querySelector(this.selectors.header);
+        this.groupsElement = this.rootElement.querySelector(this.selectors.groups);
+        this.bindEvents();
+    }
 
-  onToggleClick = () => {
-      this.toggleButton.classList.toggle(this.stateClasses.isActive);
-      this.overlayElement.classList.toggle(this.stateClasses.isActive);
-  };
+    onToggleClick = () => {
+        this.toggleButton.classList.toggle(this.stateClasses.isActive);
+        this.overlayElement.classList.toggle(this.stateClasses.isActive);
+        this.groupsElement.classList.toggle(this.stateClasses.isActive);
+    };
 
-  closePanel() {
-      this.toggleButton.classList.remove(this.stateClasses.isActive);
-      this.overlayElement.classList.remove(this.stateClasses.isActive);
-  }
+    closePanel() {
+        this.toggleButton.classList.remove(this.stateClasses.isActive);
+        this.overlayElement.classList.remove(this.stateClasses.isActive);
+        this.groupsElement.classList.remove(this.stateClasses.isActive);
+    }
 
-  bindEvents() {
-      this.toggleButton.addEventListener('click', this.onToggleClick);
-  }
+    bindEvents() {
+        this.headerElement.addEventListener('click', this.onToggleClick);
+    }
 }
 
 export { Filters, FiltersPanel };

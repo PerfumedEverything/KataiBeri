@@ -3,44 +3,36 @@
 .filters {
     &__title {
         text-align: center;
-        margin: rem(50) 0 rem(30) 0;
+        padding: rem(40);
+        margin-bottom: rem(14);
 
         @include mobile {
-            margin: rem(30) 0 rem(15) 0;
+            padding: rem(30);
         }
     }
 
     &__body {
         position: relative;
         display: flex;
+        flex-direction: column;
         column-gap: rem(16);
-
-        @include tablet {
-            display: flex;
-            flex-direction: column;
-        }
     }
 
     &__panel {
-        position: sticky;
+        position: relative;
         display: flex;
         flex-direction: column;
         flex: 1;
         row-gap: rem(12);
 
-        @include tablet {
-            position: static;
-        }
-
         &-header {
+            position: relative;
             display: flex;
             align-items: center;
-            justify-content: space-between;
+            justify-content: end;
+            column-gap: rem(24);
             padding: rem(30);
-
-            @include tablet-above {
-                pointer-events: none;
-            }
+            cursor: pointer;
 
             @include tablet {
                 padding: rem(30)
@@ -51,13 +43,15 @@
             }
 
             &-title {
-                @include fluid-text(28, 20);
+                @include fluid-text(18, 14);
             }
 
             &-btn {
-                @include square(rem(40));
+                @include square(rem(24));
+
                 position: relative;
                 cursor: pointer;
+                z-index: 102;
 
                 &::before {
                     position: absolute;
@@ -67,63 +61,74 @@
                     top: 0;
                     left: 0;
                     background: url(./icons/filters-icon.svg);
+                    transition: var(--transition-duration);
                 }
 
                 &.is-active {
-
-                    @include tablet {
-                        &::after {
-                            content: '';
-                            position: absolute;
-                            top: 50%;
-                            left: 50%;
-                            width: 100%; 
-                            height: rem(3);
-                            border-radius: rem(50);
-                            background-color: var(--color-dark);
-                            transform: translate(-50%, -50%) rotate(45deg);
-                            transform-origin: center;
-                        }
-                
-                        &::before {
-                            content: '';
-                            position: absolute;
-                            top: 50%;
-                            left: 50%;
-                            width: 100%; 
-                            height: rem(3);
-                            border-radius: rem(50);
-                            background-color: var(--color-dark);
-                            transform: translate(-50%, -50%) rotate(-45deg);
-                            transform-origin: center;
-                        }
+                    &::after {
+                        content: '';
+                        position: absolute;
+                        top: 50%;
+                        left: 50%;
+                        width: 100%; 
+                        height: rem(3);
+                        border-radius: rem(50);
+                        background-color: var(--color-dark);
+                        transform: translate(-50%, -50%) rotate(45deg);
+                        transform-origin: center;
+                        transition: var(--transition-duration);
                     }
-
+                
+                    &::before {
+                        content: '';
+                        position: absolute;
+                        top: 50%;
+                        left: 50%;
+                        width: 100%; 
+                        height: rem(3);
+                        border-radius: rem(50);
+                        background-color: var(--color-dark);
+                        transform: translate(-50%, -50%) rotate(-45deg);
+                        transform-origin: center;
+                        transition: var(--transition-duration);
+                    }
                 }
             }
         }
 
         &-overlay {
-            display: flex;
-            flex-direction: column;
-            row-gap: rem(12);
-            color: var(--color-dark) !important;
+            position: fixed;
+            display: none;
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.4); 
+            z-index: 100;
 
-            @include tablet {
-                display: none;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: fit-content;
-                z-index: 50;
-                background-color: var(--color-gray);
+            &.is-active {
+                display: flex;
+            }
+        }
 
-                &.is-active {
-                    display: flex !important;
-                    flex-direction: row;
-                    flex-wrap: wrap;
-                    gap: rem(12);
-                }
+        &-groups {
+            position: absolute;
+            display: none;
+            top: 0;
+            right: 0;
+            width: rem(600);
+            padding: rem(30);
+            background-color: var(--color-gray);
+            z-index: 101;
+
+            &.is-active {
+                display: flex;
+                flex-direction: column;
+                row-gap: rem(10);
+            }
+
+            &--title {
+                margin-bottom: rem(20);
             }
         }
 
@@ -177,7 +182,7 @@
 
     &__show-all {
         @include fluid-text(24, 18);
-        
+
         width: 100%;
         justify-content: center;
         padding: rem(40) 0;
