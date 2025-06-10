@@ -131,12 +131,11 @@
             }
 
             @include tablet {
-                padding: rem(28) rem(20) rem(20) rem(20);
+                padding: rem(30) rem(20) rem(20) rem(20);
             }
 
             @include mobile {
                 width: 100%;
-                padding: rem(28) rem(20) rem(20) rem(20);
             }
         }
 

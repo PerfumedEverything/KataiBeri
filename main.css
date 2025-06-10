@@ -1993,13 +1993,12 @@ a {
 }
 @media (width <= 63.99875rem) {
   .filters__panel-groups {
-    padding: 1.75rem 1.25rem 1.25rem 1.25rem;
+    padding: 1.875rem 1.25rem 1.25rem 1.25rem;
   }
 }
 @media (width <= 47.99875rem) {
   .filters__panel-groups {
     width: 100%;
-    padding: 1.75rem 1.25rem 1.25rem 1.25rem;
   }
 }
 .filters__panel-group {
