@@ -31,15 +31,11 @@
             align-items: center;
             justify-content: end;
             column-gap: rem(24);
-            padding: rem(20);
+            padding: rem(20) rem(30);
             cursor: pointer;
 
             @include tablet {
-                padding: rem(30)
-            }
-
-            @include mobile {
-                padding: rem(20) rem(30);
+                padding: rem(20)
             }
 
             &-title {
@@ -135,7 +131,7 @@
             }
 
             @include tablet {
-                padding: rem(38) rem(30) rem(30) rem(30);
+                padding: rem(28) rem(20) rem(20) rem(20);
             }
 
             @include mobile {
